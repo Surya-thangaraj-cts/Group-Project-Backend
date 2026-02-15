@@ -1,0 +1,67 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using UserApi.DTOs;
+using UserApi.Services;
+
+namespace UserApi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class ApprovalsController : ControllerBase
+{
+    private readonly IApprovalService _approvalService;
+
+    public ApprovalsController(IApprovalService approvalService)
+    {
+        _approvalService = approvalService;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll(
+        [FromQuery] int pageNumber = 1,
+        [FromQuery] int pageSize = 10,
+        [FromQuery] string? decision = null,
+        [FromQuery] string? type = null)
+    {
+        var pagedApprovals = await _approvalService.GetAllApprovalsAsync(
+            pageNumber, pageSize, decision, type);
+        return Ok(pagedApprovals);
+    }
+
+    [HttpGet("details")]
+    public async Task<IActionResult> GetAllWithDetails(
+        [FromQuery] int pageNumber = 1,
+        [FromQuery] int pageSize = 10,
+        [FromQuery] string? decision = null,
+        [FromQuery] string? type = null)
+    {
+        var pagedApprovalDetails = await _approvalService.GetAllApprovalDetailsAsync(
+            pageNumber, pageSize, decision, type);
+        return Ok(pagedApprovalDetails);
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var approval = await _approvalService.GetApprovalByIdAsync(id);
+        return approval is null ? NotFound() : Ok(approval);
+    }
+
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateDecision(int id, UpdateApprovalDto dto)
+    {
+        try
+        {
+            var updatedApproval = await _approvalService.ProcessApprovalDecisionAsync(id, dto);
+            return Ok(updatedApproval);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+    }
+}
+

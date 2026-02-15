@@ -1,0 +1,287 @@
+﻿using UserApi.Helpers;
+using AutoMapper;
+using UserApi.DTOs;
+using UserApi.Models;
+using UserApi.Repositories;
+using UserApi.Services;
+using DtoPagedResult = UserApi.DTOs.PagedResult<UserApi.Models.Transaction>;
+
+namespace AccountTrack.Api.Services;
+
+public class TransactionService : ITransactionService
+{
+    private readonly ITransactionRepository _transactionRepository;
+    private readonly IAccountRepository _accountRepository;
+    private readonly IApprovalRepository _approvalRepository;
+    private readonly INotificationService _notificationService;
+    private readonly IMapper _mapper;
+    private const decimal PendingThreshold = 100000m; // 1 lakh
+
+    public TransactionService(
+        ITransactionRepository transactionRepository,
+        IAccountRepository accountRepository,
+        IApprovalRepository approvalRepository,
+        INotificationService notificationService,
+        IMapper mapper)
+    {
+        _transactionRepository = transactionRepository;
+        _accountRepository = accountRepository;
+        _approvalRepository = approvalRepository;
+        _notificationService = notificationService;
+        _mapper = mapper;
+    }
+
+    // Change the return type of GetAllTransactionsAsync to use the explicit DTO type
+    public async Task<UserApi.DTOs.PagedResult<Transaction>> GetAllTransactionsAsync(
+        int pageNumber = 1,
+        int pageSize = 10,
+        int? accountId = null,
+        string? type = null,
+        string? status = null,
+        string? flag = null,
+        DateTime? fromDate = null,
+        DateTime? toDate = null)
+    {
+        var transactions = await _transactionRepository.GetAllAsync();
+
+        // Apply filters (reuse your existing filter logic)
+        if (accountId.HasValue)
+        {
+            transactions = transactions.Where(t =>
+                t.AccountId == accountId.Value || t.TargetAccountId == accountId.Value);
+        }
+
+        if (!string.IsNullOrWhiteSpace(type))
+        {
+            transactions = transactions.Where(t =>
+                t.Type.Equals(type, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(status))
+        {
+            transactions = transactions.Where(t =>
+                t.Status.ToString().Equals(status, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(flag))
+        {
+            transactions = transactions.Where(t =>
+                t.Flag.Equals(flag, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (fromDate.HasValue)
+        {
+            transactions = transactions.Where(t => t.Date >= fromDate.Value);
+        }
+
+        if (toDate.HasValue)
+        {
+            var endOfDay = toDate.Value.Date.AddDays(1).AddTicks(-1);
+            transactions = transactions.Where(t => t.Date <= endOfDay);
+        }
+
+        var totalCount = transactions.Count();
+        var pagedTransactions = transactions
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        return new UserApi.DTOs.PagedResult<Transaction>
+        {
+            Items = pagedTransactions,
+            TotalCount = totalCount,
+            PageNumber = pageNumber,
+            PageSize = pageSize
+        };
+    }
+
+    public async Task<Transaction?> GetTransactionByIdAsync(int id)
+    {
+        return await _transactionRepository.GetByIdAsync(id);
+    }
+
+    public async Task<Transaction> CreateTransactionAsync(CreateTransactionDto dto)
+    {
+        // Validate source account exists
+        var sourceAccount = await _accountRepository.GetByIdAsync(dto.AccountId);
+        if (sourceAccount == null)
+        {
+            throw new InvalidOperationException($"Account with ID {dto.AccountId} not found.");
+        }
+
+        // Check if source account is closed
+        if (sourceAccount.Status == AccountStatus.Closed)
+        {
+            throw new InvalidOperationException($"Cannot perform transactions on closed account {dto.AccountId}. Please contact support to reactivate your account.");
+        }
+
+        // Check if source account is pending
+        if (sourceAccount.Status == AccountStatus.Pending)
+        {
+            throw new InvalidOperationException($"Cannot perform transactions on pending account {dto.AccountId}. Account must be approved first.");
+        }
+
+        // Check if source account is pending
+        if (sourceAccount.Status == AccountStatus.Pending)
+        {
+            throw new InvalidOperationException($"Cannot perform transactions on pending account {dto.AccountId}. Account must be approved first.");
+        }
+
+        // Validate sufficient balance for withdrawals and transfers BEFORE creating transaction
+        if (dto.TransactionType == 2) // Withdrawal
+        {
+            if (sourceAccount.Balance < dto.Amount)
+            {
+                throw new InvalidOperationException($"Insufficient balance for withdrawal. Available balance: ₹{sourceAccount.Balance:N2}, Requested amount: ₹{dto.Amount:N2}");
+            }
+        }
+        else if (dto.TransactionType == 3) // Transfer
+        {
+            if (dto.ToAccountId == null)
+            {
+                throw new ArgumentException("Target account is required for transfers.");
+            }
+
+            if (sourceAccount.Balance < dto.Amount)
+            {
+                throw new InvalidOperationException($"Insufficient balance for transfer. Available balance: ₹{sourceAccount.Balance:N2}, Requested amount: ₹{dto.Amount:N2}");
+            }
+
+            // Validate target account exists and is not closed
+            var targetAccount = await _accountRepository.GetByIdAsync(dto.ToAccountId.Value);
+            if (targetAccount == null)
+            {
+                throw new InvalidOperationException($"Target account with ID {dto.ToAccountId} not found.");
+            }
+
+            if (targetAccount.Status == AccountStatus.Closed)
+            {
+                throw new InvalidOperationException($"Cannot perform transfer to closed account {dto.ToAccountId}. The recipient account is not active.");
+            }
+        }
+
+        // Map transaction type
+        var transactionType = dto.TransactionType switch
+        {
+            1 => "Deposit",
+            2 => "Withdrawal",
+            3 => "Transfer",
+            _ => throw new ArgumentException("Invalid transaction type.")
+        };
+
+        // Create transaction entity
+        var transaction = new Transaction
+        {
+            AccountId = dto.AccountId,
+            Type = transactionType,
+            Amount = dto.Amount,
+            Narrative = dto.Narrative,
+            Date = DateTime.UtcNow,
+            // Only set TargetAccountId for Transfer transactions (type 3), otherwise null
+            TargetAccountId = dto.TransactionType == 3 ? dto.ToAccountId : null,
+            // Set Flag to "High" for high-value transactions (> 1 lakh), otherwise "Normal"
+            Flag = dto.Amount > PendingThreshold ? "High" : "Normal"
+        };
+
+        // Set status based on amount
+        transaction.Status = dto.Amount > PendingThreshold
+            ? TransactionStatus.Pending
+            : TransactionStatus.Completed;
+
+        // For high-value transactions (Pending status), create approval record and notification
+        if (transaction.Status == TransactionStatus.Pending)
+        {
+            // Save transaction first to get TransactionId
+            var savedTransaction = await _transactionRepository.AddAsync(transaction);
+
+            // Create approval record
+            var approval = new Approval
+            {
+                Type = ApprovalType.HighValueTransaction, // Set the approval type
+                TransactionId = savedTransaction.TransactionId,
+                AccountId = null, // This is a transaction approval, not account approval
+                ReviewerId = 1, // Random reviewer ID (you can implement proper reviewer selection logic)
+                Decision = ApprovalDecision.Pending,
+                Comments = $"High-value {transactionType} transaction of ₹{dto.Amount:N2} requires approval",
+                ApprovalDate = DateTime.UtcNow,
+                PendingChanges = null
+            };
+
+            var createdApproval = await _approvalRepository.AddAsync(approval);
+
+            // Create notification for high-value transaction (Suspicious Activity)
+            await _notificationService.CreateNotificationForHighValueTransactionAsync(
+                savedTransaction.TransactionId,
+                1, // You can replace this with actual user ID
+                dto.Amount,
+                transactionType
+            );
+
+            // Create notification for approval reminder (for the reviewer)
+            await _notificationService.CreateNotificationForApprovalAsync(
+                createdApproval.ApprovalId,
+                createdApproval.ReviewerId,
+                ApprovalType.HighValueTransaction
+            );
+
+            return savedTransaction;
+        }
+
+        // Only update balances if transaction is completed (not pending approval)
+        if (transaction.Status == TransactionStatus.Completed)
+        {
+            // Handle different transaction types
+            switch (dto.TransactionType)
+            {
+                case 1: // Deposit
+                    sourceAccount.Balance += dto.Amount;
+                    await _accountRepository.UpdateAsync(sourceAccount);
+                    break;
+
+                case 2: // Withdrawal
+                    // Double-check balance before updating (defensive programming)
+                    if (sourceAccount.Balance < dto.Amount)
+                    {
+                        throw new InvalidOperationException($"Insufficient balance for withdrawal. Available balance: ₹{sourceAccount.Balance:N2}, Requested amount: ₹{dto.Amount:N2}");
+                    }
+                    sourceAccount.Balance -= dto.Amount;
+                    await _accountRepository.UpdateAsync(sourceAccount);
+                    break;
+
+                case 3: // Transfer
+                    var targetAccount = await _accountRepository.GetByIdAsync(dto.ToAccountId!.Value);
+                    if (targetAccount == null)
+                    {
+                        throw new InvalidOperationException($"Target account with ID {dto.ToAccountId} not found.");
+                    }
+
+                    // Double-check balance before updating (defensive programming)
+                    if (sourceAccount.Balance < dto.Amount)
+                    {
+                        throw new InvalidOperationException($"Insufficient balance for transfer. Available balance: ₹{sourceAccount.Balance:N2}, Requested amount: ₹{dto.Amount:N2}");
+                    }
+
+                    // Deduct from source and add to target
+                    sourceAccount.Balance -= dto.Amount;
+                    targetAccount.Balance += dto.Amount;
+
+                    await _accountRepository.UpdateAsync(sourceAccount);
+                    await _accountRepository.UpdateAsync(targetAccount);
+                    break;
+            }
+        }
+
+        // Save transaction
+        return await _transactionRepository.AddAsync(transaction);
+    }
+
+    public async Task<Transaction> UpdateTransactionAsync(int id, Transaction transaction)
+    {
+        return await _transactionRepository.UpdateAsync(transaction);
+    }
+
+    public async Task<bool> DeleteTransactionAsync(int id)
+    {
+        return await _transactionRepository.DeleteAsync(id);
+    }
+}

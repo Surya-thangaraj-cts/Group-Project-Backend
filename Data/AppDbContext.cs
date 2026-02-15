@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using UserApi.Models;
 using UserApprovalApi.Models;
 
 namespace UserApprovalApi.Data
@@ -13,6 +14,11 @@ namespace UserApprovalApi.Data
 
         // DbSets
         public DbSet<User> Users => Set<User>();
+        public DbSet<Account> Accounts => Set<Account>();
+        public DbSet<Transaction> Transactions => Set<Transaction>();
+        public DbSet<Approval> Approvals => Set<Approval>();
+        public DbSet<Notification> Notifications => Set<Notification>();
+        public DbSet<Report> Reports => Set<Report>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -66,6 +72,67 @@ namespace UserApprovalApi.Data
                 // Helpful filtered indexes
                 entity.HasIndex(u => u.Status).HasDatabaseName("IX_Users_Status");
                 entity.HasIndex(u => u.Role).HasDatabaseName("IX_Users_Role");
+
+                modelBuilder.Entity<Account>()
+                .Property(a => a.Balance)
+                .HasPrecision(18, 2);
+
+                modelBuilder.Entity<Transaction>()
+                    .Property(t => t.Amount)
+                    .HasPrecision(18, 2);
+
+                // Configure Transaction Type as string
+                modelBuilder.Entity<Transaction>()
+                    .Property(t => t.Type)
+                    .HasConversion<string>();
+
+                // Configure TransactionStatus enum to be stored as string
+                modelBuilder.Entity<Transaction>()
+                    .Property(t => t.Status)
+                    .HasConversion<string>();
+
+                // Configure AccountType enum to be stored as string
+                modelBuilder.Entity<Account>()
+                    .Property(a => a.AccountType)
+                    .HasConversion<string>();
+
+                // Configure AccountStatus enum to be stored as string
+                modelBuilder.Entity<Account>()
+                    .Property(a => a.Status)
+                    .HasConversion<string>();
+
+                // Configure ApprovalType enum to be stored as string
+                modelBuilder.Entity<Approval>()
+                    .Property(a => a.Type)
+                    .HasConversion<string>();
+
+                // Configure ApprovalDecision enum to be stored as string
+                modelBuilder.Entity<Approval>()
+                    .Property(a => a.Decision)
+                    .HasConversion<string>();
+
+                // Configure NotificationType enum to be stored as string
+                modelBuilder.Entity<Notification>()
+                    .Property(n => n.Type)
+                    .HasConversion<string>();
+
+                // Configure NotificationStatus enum to be stored as string
+                modelBuilder.Entity<Notification>()
+                    .Property(n => n.Status)
+                    .HasConversion<string>();
+
+                // Configure Approval relationships
+                modelBuilder.Entity<Approval>()
+                    .HasOne(a => a.Transaction)
+                    .WithMany()
+                    .HasForeignKey(a => a.TransactionId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                modelBuilder.Entity<Approval>()
+                    .HasOne(a => a.Account)
+                    .WithMany()
+                    .HasForeignKey(a => a.AccountId)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
         }
 
@@ -110,5 +177,28 @@ namespace UserApprovalApi.Data
                 }
             }
         }
+
+        public void ValidateTransaction(Transaction transaction)
+        {
+            // Convert transaction.Type (string) to TransactionType enum for comparison
+            if (Enum.TryParse<TransactionType>(transaction.Type, out var transactionType))
+            {
+                if (transactionType == TransactionType.Transfer && transaction.TargetAccountId == null)
+                {
+                    throw new ArgumentException("TargetAccountId is required for Transfer transactions.");
+                }
+
+                if (transactionType != TransactionType.Transfer && transaction.TargetAccountId != null)
+                {
+                    throw new ArgumentException("TargetAccountId should only be set for Transfer transactions.");
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Invalid transaction type.");
+            }
+        }
+
+
     }
 }

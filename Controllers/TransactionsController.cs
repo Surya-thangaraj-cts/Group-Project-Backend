@@ -1,0 +1,104 @@
+﻿using UserApi.Models;
+using AccountTrack.Api.Services;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using UserApi.DTOs;
+
+namespace AccountTrack.Api.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class TransactionsController : ControllerBase
+{
+    private readonly ITransactionService _transactionService;
+    private readonly IMapper _mapper;
+
+    public TransactionsController(ITransactionService transactionService, IMapper mapper)
+    {
+        _transactionService = transactionService;
+        _mapper = mapper;
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<PagedResult<TransactionDto>>> GetTransactions(
+        [FromQuery] int pageNumber = 1,
+        [FromQuery] int pageSize = 10,
+        [FromQuery] int? accountId = null,
+        [FromQuery] string? type = null,
+        [FromQuery] string? status = null,
+        [FromQuery] string? flag = null,
+        [FromQuery] DateTime? fromDate = null,
+        [FromQuery] DateTime? toDate = null)
+    {
+        try
+        {
+            var pagedTransactions = await _transactionService.GetAllTransactionsAsync(
+                pageNumber, pageSize, accountId, type, status, flag, fromDate, toDate);
+
+            var transactionDtos = _mapper.Map<IEnumerable<TransactionDto>>(pagedTransactions.Items);
+
+            var result = new PagedResult<TransactionDto>
+            {
+                Items = transactionDtos,
+                PageNumber = pagedTransactions.PageNumber,
+                PageSize = pagedTransactions.PageSize,
+                TotalCount = pagedTransactions.TotalCount,
+                TotalPages = pagedTransactions.TotalPages
+            };
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "An error occurred while retrieving transactions.", details = ex.Message });
+        }
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<TransactionDto>> GetTransaction(int id)
+    {
+        try
+        {
+            var transaction = await _transactionService.GetTransactionByIdAsync(id);
+
+            if (transaction == null)
+            {
+                return NotFound();
+            }
+
+            var dto = _mapper.Map<TransactionDto>(transaction);
+
+            return Ok(dto);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "An error occurred while retrieving the transaction.", details = ex.Message });
+        }
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<TransactionDto>> CreateTransaction(CreateTransactionDto dto)
+    {
+        try
+        {
+            var createdTransaction = await _transactionService.CreateTransactionAsync(dto);
+
+            return CreatedAtAction(
+                nameof(GetTransaction),
+                new { id = createdTransaction.TransactionId },
+                _mapper.Map<TransactionDto>(createdTransaction));
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "An error occurred while creating the transaction.", details = ex.Message });
+        }
+    }
+}
