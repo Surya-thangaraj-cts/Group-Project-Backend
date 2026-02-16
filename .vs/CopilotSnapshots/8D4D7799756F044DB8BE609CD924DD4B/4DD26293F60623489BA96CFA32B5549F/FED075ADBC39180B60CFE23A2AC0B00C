@@ -1,0 +1,204 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using UserApi.Models;
+using UserApprovalApi.Models;
+
+namespace UserApprovalApi.Data
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        // DbSets
+        public DbSet<User> Users => Set<User>();
+        public DbSet<Account> Accounts => Set<Account>();
+        public DbSet<Transaction> Transactions => Set<Transaction>();
+        public DbSet<Approval> Approvals => Set<Approval>();
+        public DbSet<Notification> Notifications => Set<Notification>();
+        public DbSet<Report> Reports => Set<Report>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // ----- User entity configuration -----
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("Users");
+
+                entity.HasKey(u => u.Id);
+
+                // Unique constraints
+                entity.HasIndex(u => u.UserId).IsUnique();
+                entity.HasIndex(u => u.Email).IsUnique();
+
+                // Required fields & lengths (you can tweak as needed)
+                entity.Property(u => u.UserId)
+                      .IsRequired()
+                      .HasMaxLength(50);
+
+                entity.Property(u => u.Name)
+                      .IsRequired()
+                      .HasMaxLength(150);
+
+                entity.Property(u => u.Email)
+                      .IsRequired()
+                      .HasMaxLength(256);
+
+                entity.Property(u => u.Branch)
+                      .HasMaxLength(100);
+
+                // Enum -> tinyint (byte) conversions
+                entity.Property(u => u.Status)
+                      .HasConversion<byte>()           // stores 0/1/2
+                      .IsRequired();
+
+                entity.Property(u => u.Role)
+                      .HasConversion<byte>()           // stores 1/2/3 for Admin/Manager/Officer
+                      .IsRequired();
+
+                // Timestamps
+                entity.Property(u => u.CreatedAtUtc)
+                      .HasColumnType("datetime2(3)")
+                      .HasDefaultValueSql("SYSUTCDATETIME()");
+
+                entity.Property(u => u.UpdatedAtUtc)
+                      .HasColumnType("datetime2(3)")
+                      .HasDefaultValueSql("SYSUTCDATETIME()");
+
+                // Helpful filtered indexes
+                entity.HasIndex(u => u.Status).HasDatabaseName("IX_Users_Status");
+                entity.HasIndex(u => u.Role).HasDatabaseName("IX_Users_Role");
+
+                modelBuilder.Entity<Account>()
+                .Property(a => a.Balance)
+                .HasPrecision(18, 2);
+
+                modelBuilder.Entity<Transaction>()
+                    .Property(t => t.Amount)
+                    .HasPrecision(18, 2);
+
+                // Configure Transaction Type as string
+                modelBuilder.Entity<Transaction>()
+                    .Property(t => t.Type)
+                    .HasConversion<string>();
+
+                // Configure TransactionStatus enum to be stored as string
+                modelBuilder.Entity<Transaction>()
+                    .Property(t => t.Status)
+                    .HasConversion<string>();
+
+                // Configure AccountType enum to be stored as string
+                modelBuilder.Entity<Account>()
+                    .Property(a => a.AccountType)
+                    .HasConversion<string>();
+
+                // Configure AccountStatus enum to be stored as string
+                modelBuilder.Entity<Account>()
+                    .Property(a => a.Status)
+                    .HasConversion<string>();
+
+                // Configure ApprovalType enum to be stored as string
+                modelBuilder.Entity<Approval>()
+                    .Property(a => a.Type)
+                    .HasConversion<string>();
+
+                // Configure ApprovalDecision enum to be stored as string
+                modelBuilder.Entity<Approval>()
+                    .Property(a => a.Decision)
+                    .HasConversion<string>();
+
+                // Configure NotificationType enum to be stored as string
+                modelBuilder.Entity<Notification>()
+                    .Property(n => n.Type)
+                    .HasConversion<string>();
+
+                // Configure NotificationStatus enum to be stored as string
+                modelBuilder.Entity<Notification>()
+                    .Property(n => n.Status)
+                    .HasConversion<string>();
+
+                // Configure Approval relationships
+                modelBuilder.Entity<Approval>()
+                    .HasOne(a => a.Transaction)
+                    .WithMany()
+                    .HasForeignKey(a => a.TransactionId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                modelBuilder.Entity<Approval>()
+                    .HasOne(a => a.Account)
+                    .WithMany()
+                    .HasForeignKey(a => a.AccountId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+        }
+
+        /// <summary>
+        /// Automatically sets UpdatedAtUtc on entities that have that property whenever SaveChanges is called.
+        /// </summary>
+        public override int SaveChanges()
+        {
+            TouchUpdatedAt();
+            return base.SaveChanges();
+        }
+
+        public override int SaveChanges(bool acceptAllChangesOnSuccess)
+        {
+            TouchUpdatedAt();
+            return base.SaveChanges(acceptAllChangesOnSuccess);
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            TouchUpdatedAt();
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
+        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
+        {
+            TouchUpdatedAt();
+            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        }
+
+        private void TouchUpdatedAt()
+        {
+            var entries = ChangeTracker.Entries()
+                .Where(e => e.State == EntityState.Modified || e.State == EntityState.Added);
+
+            foreach (var e in entries)
+            {
+                var prop = e.Properties.FirstOrDefault(p => p.Metadata.Name == nameof(User.UpdatedAtUtc));
+                if (prop != null)
+                {
+                    prop.CurrentValue = DateTime.UtcNow;
+                }
+            }
+        }
+
+        public void ValidateTransaction(Transaction transaction)
+        {
+            // Convert transaction.Type (string) to TransactionType enum for comparison
+            if (Enum.TryParse<TransactionType>(transaction.Type, out var transactionType))
+            {
+                if (transactionType == TransactionType.Transfer && transaction.TargetAccountId == null)
+                {
+                    throw new ArgumentException("TargetAccountId is required for Transfer transactions.");
+                }
+
+                if (transactionType != TransactionType.Transfer && transaction.TargetAccountId != null)
+                {
+                    throw new ArgumentException("TargetAccountId should only be set for Transfer transactions.");
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Invalid transaction type.");
+            }
+        }
+
+
+    }
+}

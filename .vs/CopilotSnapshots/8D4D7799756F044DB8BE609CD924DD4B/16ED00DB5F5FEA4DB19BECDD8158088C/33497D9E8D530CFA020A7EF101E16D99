@@ -1,0 +1,35 @@
+﻿# Test JWT Authentication
+# First, login to get token
+$loginUrl = "https://localhost:7021/api/Auth/login"
+$loginBody = @{
+    UserId = "admin"
+    Password = "Admin@123!"
+} | ConvertTo-Json
+
+Write-Host "=== Step 1: Login ===" -ForegroundColor Cyan
+try {
+    $loginResponse = Invoke-RestMethod -Uri $loginUrl -Method Post -Body $loginBody -ContentType "application/json" -SkipCertificateCheck
+    $token = $loginResponse.token
+    Write-Host "✓ Login successful!" -ForegroundColor Green
+    Write-Host "Token: $($token.Substring(0, 50))..." -ForegroundColor Yellow
+} catch {
+    Write-Host "✗ Login failed: $_" -ForegroundColor Red
+    exit
+}
+
+# Now test protected endpoint
+$protectedUrl = "https://localhost:7021/api/admin/pending-users"
+$headers = @{
+    "Authorization" = "Bearer $token"
+}
+
+Write-Host "`n=== Step 2: Call Protected Endpoint ===" -ForegroundColor Cyan
+try {
+    $response = Invoke-RestMethod -Uri $protectedUrl -Method Get -Headers $headers -SkipCertificateCheck
+    Write-Host "✓ Success! Got $($response.Count) results" -ForegroundColor Green
+    Write-Host "Response: $($response | ConvertTo-Json -Depth 2)" -ForegroundColor White
+} catch {
+    $statusCode = $_.Exception.Response.StatusCode.value__
+    Write-Host "✗ Failed with status $statusCode" -ForegroundColor Red
+    Write-Host "Error: $_" -ForegroundColor Red
+}

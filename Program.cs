@@ -1,24 +1,22 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using AccountTrack.Api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi;
+using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json.Serialization;
-using UserApprovalApi.Data;
-using UserApprovalApi.Filters;
-using UserApprovalApi.Models;
-using UserApprovalApi.Services;
-using UserApprovalApi.Repositories;
 using UserApi.Repositories;
 using UserApi.Services;
-using AccountTrack.Api.Services;
+using UserApprovalApi.Data;
+using UserApprovalApi.Models;
+using UserApprovalApi.Repositories;
+using UserApprovalApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // -------------------- Services --------------------
 
-// EF Core - SQL Server
-// In Program.cs
+// CORS (Angular dev)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
@@ -30,27 +28,26 @@ builder.Services.AddCors(options =>
     });
 });
 
-// After var app = builder.Build();
-
+// EF Core - SQL Server
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-// Register Repositories
+// Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<IApprovalRepository, ApprovalRepository>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 
-// Register Services
+// Services
 builder.Services.AddScoped<IApprovalService, ApprovalService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 
-// Register AutoMapper
+// AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 
-// Controllers + JSON enum converter (accept "Admin" | "Manager" | "Officer")
+// Controllers + JSON enum converter
 builder.Services
     .AddControllers()
     .AddJsonOptions(o =>
@@ -70,48 +67,66 @@ if (string.IsNullOrWhiteSpace(keyString))
     throw new InvalidOperationException(
         "JWT Key is not configured. Set a strong Jwt:Key in appsettings.json.");
 }
-var key = Encoding.UTF8.GetBytes(keyString);
+var key = Encoding.UTF8.GetBytes(keyString!);
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        options.RequireHttpsMetadata = false;
+        options.RequireHttpsMetadata = false; // set true in production with a proper cert
         options.SaveToken = true;
-        options.MapInboundClaims = false;
+        options.MapInboundClaims = false;     // we use raw claim names ("role", "name")
+
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
             ValidateAudience = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtSection["Issuer"],
-            ValidAudience = jwtSection["Audience"],
+            ValidateLifetime = true,
+            ValidIssuer = jwtSection["Issuer"],         // "Company"
+            ValidAudience = jwtSection["Audience"],     // "FrontendApp"
             IssuerSigningKey = new SymmetricSecurityKey(key),
-            ClockSkew = TimeSpan.FromMinutes(5),
+            ClockSkew = TimeSpan.FromMinutes(1),
             RoleClaimType = "role",
-            NameClaimType = "name"  
+            NameClaimType = "name",
+            ValidTypes = new[] { "JWT" } // ensure we only accept standard JWTs
         };
+
         options.Events = new JwtBearerEvents
         {
+            OnMessageReceived = context =>
+            {
+                var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+                Console.WriteLine("=== JWT MESSAGE RECEIVED ===");
+                Console.WriteLine($"Authorization Header: {authHeader ?? "MISSING!"}");
+                Console.WriteLine($"Token: {context.Token ?? "NULL"}");
+                Console.WriteLine($"Path: {context.Request.Path}");
+                Console.WriteLine("===========================");
+                return Task.CompletedTask;
+            },
             OnAuthenticationFailed = context =>
             {
-                Console.WriteLine($"JWT Auth Failed: {context.Exception.Message}");
+                Console.WriteLine("=== JWT AUTH FAILED ===");
+                Console.WriteLine($"Exception: {context.Exception.Message}");
+                Console.WriteLine($"Exception Type: {context.Exception.GetType().Name}");
+                Console.WriteLine("======================");
                 return Task.CompletedTask;
             },
             OnChallenge = context =>
             {
-                Console.WriteLine($"JWT Challenge: {context.Error}, {context.ErrorDescription}");
+                Console.WriteLine("=== JWT CHALLENGE ===");
+                Console.WriteLine($"Error: {context.Error ?? "none"}");
+                Console.WriteLine($"ErrorDescription: {context.ErrorDescription ?? "none"}");
+                Console.WriteLine($"AuthenticateFailure: {context.AuthenticateFailure?.Message ?? "none"}");
+                Console.WriteLine("====================");
                 return Task.CompletedTask;
             },
             OnTokenValidated = context =>
             {
                 var claims = context.Principal?.Claims.Select(c => $"{c.Type}={c.Value}");
-                Console.WriteLine($"JWT Token Validated. Claims: {string.Join(", ", claims ?? Array.Empty<string>())}");
-                return Task.CompletedTask;
-            },
-            OnMessageReceived = context =>
-            {
-                Console.WriteLine($"JWT Message Received. Token present: {!string.IsNullOrEmpty(context.Token)}");
+                Console.WriteLine("=== JWT TOKEN VALIDATED ===");
+                Console.WriteLine($"Claims: {string.Join(", ", claims ?? Array.Empty<string>())}");
+                Console.WriteLine("===========================");
                 return Task.CompletedTask;
             }
         };
@@ -130,33 +145,33 @@ builder.Services.AddSwaggerGen(c =>
         Description = "User registration → admin approval → login with JWT"
     });
 
+    // Proper bearer definition
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Description = "Enter: Bearer {your JWT token}"
+        Description = "Enter JWT token. Example: Bearer {token}"
     });
 
-    c.AddSecurityRequirement(_ => new OpenApiSecurityRequirement
+    // Requirement
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
-            new OpenApiSecuritySchemeReference("Bearer"),
-            new List<string>()
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
         }
     });
 });
-
-// (Optional) CORS if your frontend runs on a different origin
-// builder.Services.AddCors(options =>
-// {
-//     options.AddPolicy("AllowFrontend", policy =>
-//     {
-//         policy.WithOrigins("https://localhost:5173", "http://localhost:5173")
-//               .AllowAnyHeader()
-//               .AllowAnyMethod();
-//     });
-// });
 
 var app = builder.Build();
 
@@ -167,17 +182,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowAngular");
 
+app.UseCors("AllowAngular");
 app.UseHttpsRedirection();
 
-// app.UseCors("AllowFrontend");
-
-app.UseAuthentication();
+app.UseAuthentication();   // must be before UseAuthorization
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 // -------------------- Database: migrate + seed --------------------
 using (var scope = app.Services.CreateScope())
@@ -195,10 +207,10 @@ using (var scope = app.Services.CreateScope())
             Name = "System Admin",
             Email = "admin@example.com",
             Branch = "HQ",
-            Role = UserRole.Admin,            // enum
+            Role = UserRole.Admin,
             PasswordHash = hash,
             PasswordSalt = salt,
-            Status = UserStatus.Active        // enum
+            Status = UserStatus.Active
         });
         db.SaveChanges();
     }

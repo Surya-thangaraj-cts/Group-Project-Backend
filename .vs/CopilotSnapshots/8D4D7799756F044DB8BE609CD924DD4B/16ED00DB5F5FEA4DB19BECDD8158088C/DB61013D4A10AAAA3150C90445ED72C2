@@ -1,0 +1,50 @@
+﻿# Test JWT Authentication
+# Bypass SSL certificate validation for localhost
+add-type @"
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    public class TrustAllCertsPolicy : ICertificatePolicy {
+        public bool CheckValidationResult(
+            ServicePoint srvPoint, X509Certificate certificate,
+            WebRequest request, int certificateProblem) {
+            return true;
+        }
+    }
+"@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+
+# First, login to get token
+$loginUrl = "https://localhost:7021/api/Auth/login"
+$loginBody = @{
+    UserId = "admin"
+    Password = "Admin@123!"
+} | ConvertTo-Json
+
+Write-Host "=== Step 1: Login ===" -ForegroundColor Cyan
+try {
+    $loginResponse = Invoke-RestMethod -Uri $loginUrl -Method Post -Body $loginBody -ContentType "application/json"
+    $token = $loginResponse.token
+    Write-Host "✓ Login successful!" -ForegroundColor Green
+    Write-Host "Token: $($token.Substring(0, 50))..." -ForegroundColor Yellow
+} catch {
+    Write-Host "✗ Login failed: $_" -ForegroundColor Red
+    exit
+}
+
+# Now test protected endpoint
+$protectedUrl = "https://localhost:7021/api/admin/pending-users"
+$headers = @{
+    "Authorization" = "Bearer $token"
+}
+
+Write-Host "`n=== Step 2: Call Protected Endpoint ===" -ForegroundColor Cyan
+try {
+    $response = Invoke-RestMethod -Uri $protectedUrl -Method Get -Headers $headers
+    Write-Host "✓ Success! Got $($response.Count) results" -ForegroundColor Green
+    Write-Host "Response: $($response | ConvertTo-Json -Depth 2)" -ForegroundColor White
+} catch {
+    $statusCode = $_.Exception.Response.StatusCode.value__
+    Write-Host "✗ Failed with status $statusCode" -ForegroundColor Red
+    Write-Host "Error: $_" -ForegroundColor Red
+}
