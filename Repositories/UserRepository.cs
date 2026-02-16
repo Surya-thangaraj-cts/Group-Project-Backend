@@ -67,6 +67,22 @@ namespace UserApprovalApi.Repositories
         {
             return _db.SaveChangesAsync(ct);
         }
+
+        public async Task<List<User>> SearchApprovedUsersAsync(string query, CancellationToken ct = default)
+        {
+            return await _db.Users
+                .Where(u => u.Status != UserStatus.Pending &&
+                    (u.UserId.Contains(query) || u.Name.Contains(query) || u.Email.Contains(query)))
+                .ToListAsync(ct);
+        }
+
+        public async Task<List<User>> SearchPendingUsersAsync(string query, CancellationToken ct = default)
+        {
+            return await _db.Users
+                .Where(u => u.Status == UserStatus.Pending &&
+                    (u.UserId.Contains(query) || u.Name.Contains(query) || u.Email.Contains(query) || u.Branch.Contains(query)))
+                .ToListAsync(ct);
+        }
     }
 }
 

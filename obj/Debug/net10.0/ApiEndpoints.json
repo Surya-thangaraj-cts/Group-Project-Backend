@@ -122,6 +122,16 @@
   },
   {
     "ContainingType": "UserApprovalApi.Controllers.AdminController",
+    "Method": "GetComplianceMetrics",
+    "RelativePath": "api/admin/compliance-metrics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApprovalApi.Controllers.AdminController",
     "Method": "Deactivate",
     "RelativePath": "api/admin/deactivate/{userId}",
     "HttpMethod": "PUT",
@@ -165,6 +175,38 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApprovalApi.Controllers.AdminController",
+    "Method": "SearchPendingUsers",
+    "RelativePath": "api/admin/search-pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApprovalApi.Controllers.AdminController",
+    "Method": "SearchApprovedUsers",
+    "RelativePath": "api/admin/search-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

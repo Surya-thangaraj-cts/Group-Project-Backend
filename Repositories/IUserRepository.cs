@@ -17,5 +17,7 @@ namespace UserApprovalApi.Repositories
         Task AddAsync(User user, CancellationToken ct = default);
         Task SaveChangesAsync(CancellationToken ct = default);
 
+        Task<List<User>> SearchApprovedUsersAsync(string query, CancellationToken ct = default);
+        Task<List<User>> SearchPendingUsersAsync(string query, CancellationToken ct = default);
     }
 }
