@@ -1,0 +1,47 @@
+# ---- Visual Studio ----
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ---- .NET build outputs ----
+bin/
+obj/
+# Razor build caches (already covered by obj/, but keep explicit)
+**/rjsm*.dswa.cache.json
+**/rpswa.dswa.cache.json
+
+# ---- NuGet artifacts ----
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+project.lock.json
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ---- Node/Angular ----
+node_modules/
+dist/
+dist-ssr/
+.angular/
+.angular/cache/
+.tmp/
+
+# ---- Environment / secrets (override per environment with user-secrets) ----
+*.env
+*.env.*
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# ---- OS / Editors ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
