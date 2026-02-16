@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -167,14 +175,6 @@
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\userstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -241,6 +241,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\userapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:userapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\bank_officer_authorization.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:bank_officer_authorization.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464487\\onedrive - cognizant\\desktop\\backend\\group-project-backend\\account_status_not_updating_fix.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:account_status_not_updating_fix.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -250,11 +258,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "ACCOUNT_STATUS_NOT_UPDATING_FIX.md",
+              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\ACCOUNT_STATUS_NOT_UPDATING_FIX.md",
+              "RelativeDocumentMoniker": "ACCOUNT_STATUS_NOT_UPDATING_FIX.md",
+              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\ACCOUNT_STATUS_NOT_UPDATING_FIX.md",
+              "RelativeToolTip": "ACCOUNT_STATUS_NOT_UPDATING_FIX.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-16T04:05:07.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-14T06:58:51.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T06:57:25.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "Services\\JwtService.cs",
+              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Services\\JwtService.cs",
+              "RelativeToolTip": "Services\\JwtService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T06:38:19.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\UserRole.cs",
+              "RelativeDocumentMoniker": "Models\\UserRole.cs",
+              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\UserRole.cs",
+              "RelativeToolTip": "Models\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T19:58:32.916Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -270,46 +341,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAowBUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-14T06:58:51.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:57:25.67Z",
+              "WhenOpened": "2026-02-13T19:58:30.702Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "JwtService.cs",
-              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Services\\JwtService.cs",
-              "RelativeDocumentMoniker": "Services\\JwtService.cs",
-              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Services\\JwtService.cs",
-              "RelativeToolTip": "Services\\JwtService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:38:19.497Z",
+              "DocumentIndex": 60,
+              "Title": "BANK_OFFICER_AUTHORIZATION.md",
+              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\BANK_OFFICER_AUTHORIZATION.md",
+              "RelativeDocumentMoniker": "BANK_OFFICER_AUTHORIZATION.md",
+              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\BANK_OFFICER_AUTHORIZATION.md",
+              "RelativeToolTip": "BANK_OFFICER_AUTHORIZATION.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-16T03:46:54.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -333,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -345,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -357,27 +415,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AccountRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\AccountRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\AccountRepository.cs",
               "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\AccountRepository.cs",
               "RelativeToolTip": "Repositories\\AccountRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAIBJwBYAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T11:06:25.945Z"
+              "WhenOpened": "2026-02-13T11:06:25.945Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "AccountsController.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\AccountsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountsController.cs",
               "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\AccountsController.cs",
               "RelativeToolTip": "Controllers\\AccountsController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAApwAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAABBwAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T05:46:04.075Z"
+              "WhenOpened": "2026-02-14T05:46:04.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -405,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "IAccountRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\IAccountRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IAccountRepository.cs",
@@ -417,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
@@ -441,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
@@ -453,15 +513,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ApprovalService.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Services\\ApprovalService.cs",
               "RelativeDocumentMoniker": "Services\\ApprovalService.cs",
               "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Services\\ApprovalService.cs",
               "RelativeToolTip": "Services\\ApprovalService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAIBQwEkBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAANIAAAAAAAAAAABBwFkBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:23:39.804Z"
+              "WhenOpened": "2026-02-14T06:23:39.804Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -477,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "TransactionService.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Services\\TransactionService.cs",
               "RelativeDocumentMoniker": "Services\\TransactionService.cs",
@@ -489,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "TransactionRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\TransactionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\TransactionRepository.cs",
@@ -501,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "NotificationRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\NotificationRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\NotificationRepository.cs",
@@ -513,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IUserRepository.cs",
@@ -525,7 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ITransactionRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\ITransactionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ITransactionRepository.cs",
@@ -537,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "INotificationRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\INotificationRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\INotificationRepository.cs",
@@ -549,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "IApprovalRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\IApprovalRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IApprovalRepository.cs",
@@ -561,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ApprovalRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Repositories\\ApprovalRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ApprovalRepository.cs",
@@ -573,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Mapping\\MappingProfile.cs",
               "RelativeDocumentMoniker": "Mapping\\MappingProfile.cs",
@@ -585,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "PaginationHelper.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Helpers\\PaginationHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\PaginationHelper.cs",
@@ -597,7 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Helpers\\PagedResult.cs",
               "RelativeDocumentMoniker": "Helpers\\PagedResult.cs",
@@ -609,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "UpdateNotificationStatusDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\UpdateNotificationStatusDto.cs",
               "RelativeDocumentMoniker": "DTOs\\UpdateNotificationStatusDto.cs",
@@ -621,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "UpdateApprovalDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\UpdateApprovalDto.cs",
               "RelativeDocumentMoniker": "DTOs\\UpdateApprovalDto.cs",
@@ -633,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "UpdateAccountDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\UpdateAccountDto.cs",
               "RelativeDocumentMoniker": "DTOs\\UpdateAccountDto.cs",
@@ -645,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "TransactionDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\TransactionDto.cs",
               "RelativeDocumentMoniker": "DTOs\\TransactionDto.cs",
@@ -657,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\RegisterRequest.cs",
@@ -669,7 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\PagedResult.cs",
               "RelativeDocumentMoniker": "DTOs\\PagedResult.cs",
@@ -681,7 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "NotificationDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\NotificationDto.cs",
               "RelativeDocumentMoniker": "DTOs\\NotificationDto.cs",
@@ -693,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "CreateTransactionDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\CreateTransactionDto.cs",
               "RelativeDocumentMoniker": "DTOs\\CreateTransactionDto.cs",
@@ -705,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "CreateAccountDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\CreateAccountDto.cs",
               "RelativeDocumentMoniker": "DTOs\\CreateAccountDto.cs",
@@ -717,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "PaginationParams.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\PaginationParams.cs",
               "RelativeDocumentMoniker": "DTOs\\PaginationParams.cs",
@@ -729,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "ComplianceMetricsDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\ComplianceMetricsDto.cs",
               "RelativeDocumentMoniker": "DTOs\\ComplianceMetricsDto.cs",
@@ -741,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "AuthDtos.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\AuthDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\AuthDtos.cs",
@@ -753,31 +814,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "TransactionsController.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\TransactionsController.cs",
               "RelativeDocumentMoniker": "Controllers\\TransactionsController.cs",
               "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\TransactionsController.cs",
               "RelativeToolTip": "Controllers\\TransactionsController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAawAQAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAABBwAUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:51:28.175Z"
+              "WhenOpened": "2026-02-14T06:51:28.175Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "NotificationsController.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\NotificationsController.cs",
               "RelativeDocumentMoniker": "Controllers\\NotificationsController.cs",
               "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\NotificationsController.cs",
               "RelativeToolTip": "Controllers\\NotificationsController.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAswAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:50:13.573Z"
+              "WhenOpened": "2026-02-14T06:50:13.573Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "AccountDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\AccountDto.cs",
               "RelativeDocumentMoniker": "DTOs\\AccountDto.cs",
@@ -789,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "ApprovalDetailsDto.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\DTOs\\ApprovalDetailsDto.cs",
               "RelativeDocumentMoniker": "DTOs\\ApprovalDetailsDto.cs",
@@ -801,19 +864,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "ApprovalsController.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\ApprovalsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ApprovalsController.cs",
               "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Controllers\\ApprovalsController.cs",
               "RelativeToolTip": "Controllers\\ApprovalsController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAawAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:49:07.144Z"
+              "WhenOpened": "2026-02-14T06:49:07.144Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "UserStatus.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\UserStatus.cs",
               "RelativeDocumentMoniker": "Models\\UserStatus.cs",
@@ -849,18 +913,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T19:58:30.702Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 45,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\Notification.cs",
@@ -882,18 +934,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-13T11:26:10.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "UserRole.cs",
-              "DocumentMoniker": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\UserRole.cs",
-              "RelativeDocumentMoniker": "Models\\UserRole.cs",
-              "ToolTip": "C:\\Users\\2464487\\OneDrive - Cognizant\\Desktop\\Backend\\Group-Project-Backend\\Models\\UserRole.cs",
-              "RelativeToolTip": "Models\\UserRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T19:58:32.916Z"
             },
             {
               "$type": "Document",
