@@ -11,7 +11,7 @@ namespace UserApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = "Officer")]
+[Authorize(Roles = "Officer,Manager")]
 public class AccountsController : ControllerBase
 {
     private readonly IAccountRepository _accountRepository;
@@ -100,7 +100,7 @@ public class AccountsController : ControllerBase
             {
                 CustomerName = dto.CustomerName,
                 CustomerId = dto.CustomerId,
-                AccountType = (AccountType)dto.AccountType,
+                AccountType = dto.AccountType,
                 Balance = 0, // Default balance to 0
                 Status = AccountStatus.Pending // Set to Pending initially
             };

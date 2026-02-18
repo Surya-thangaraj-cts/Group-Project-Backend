@@ -9,7 +9,7 @@ namespace AccountTrack.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = "Officer")]
+[Authorize(Roles = "Officer,Manager")]
 public class TransactionsController : ControllerBase
 {
     private readonly ITransactionService _transactionService;

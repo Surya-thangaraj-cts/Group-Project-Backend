@@ -130,6 +130,82 @@ namespace UserApprovalApi.Data
                 entity.Property(n => n.Status)
                       .HasConversion<string>();
             });
+
+            // ----- Report entity configuration -----
+            modelBuilder.Entity<Report>(entity =>
+            {
+                entity.ToTable("Reports");
+
+                entity.HasKey(r => r.Id);
+
+                entity.Property(r => r.GeneratedByUserId)
+                      .IsRequired()
+                      .HasMaxLength(50);
+
+                entity.Property(r => r.ReportType)
+                      .IsRequired()
+                      .HasMaxLength(50);
+
+                entity.Property(r => r.Title)
+                      .IsRequired()
+                      .HasMaxLength(200);
+
+                entity.Property(r => r.GeneratedAt)
+                      .HasColumnType("datetime2")
+                      .IsRequired()
+                      .HasDefaultValueSql("GETDATE()");
+
+                entity.Property(r => r.FromDate)
+                      .HasColumnType("datetime2");
+
+                entity.Property(r => r.ToDate)
+                      .HasColumnType("datetime2");
+
+                entity.Property(r => r.GrowthRate)
+                      .HasPrecision(18, 2)
+                      .HasDefaultValue(0.00m);
+
+                entity.Property(r => r.TotalAmount)
+                      .HasPrecision(18, 2)
+                      .HasDefaultValue(0.00m);
+
+                entity.Property(r => r.TotalTransactions)
+                      .HasDefaultValue(0);
+
+                entity.Property(r => r.DataJson)
+                      .HasColumnType("nvarchar(max)");
+
+                entity.Property(r => r.FilePath)
+                      .HasMaxLength(500);
+
+                entity.Property(r => r.TransactionStatus)
+                      .HasMaxLength(50);
+
+                entity.Property(r => r.TransactionType)
+                      .HasMaxLength(50);
+
+                // Foreign key relationship
+                entity.HasOne(r => r.Account)
+                      .WithMany()
+                      .HasForeignKey(r => r.AccountId)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                // Indexes
+                entity.HasIndex(r => r.AccountId)
+                      .HasDatabaseName("IX_Reports_AccountId");
+
+                entity.HasIndex(r => r.GeneratedAt)
+                      .HasDatabaseName("IX_Reports_GeneratedAt");
+
+                entity.HasIndex(r => r.GeneratedByUserId)
+                      .HasDatabaseName("IX_Reports_GeneratedByUserId");
+
+                entity.HasIndex(r => r.ReportType)
+                      .HasDatabaseName("IX_Reports_ReportType");
+
+                entity.HasIndex(r => new { r.FromDate, r.ToDate })
+                      .HasDatabaseName("IX_Reports_FromDate_ToDate");
+            });
         }
 
         /// <summary>

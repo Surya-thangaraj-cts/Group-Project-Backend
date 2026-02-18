@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using UserApi.Models;
 
 namespace UserApi.DTOs
 {
@@ -13,11 +14,9 @@ namespace UserApi.DTOs
         public string CustomerId { get; set; } = "";
 
         [Required(ErrorMessage = "Account type is required.")]
-        [Range(0, 1, ErrorMessage = "Account type must be 0 (Savings) or 1 (Current).")]
-        public int AccountType { get; set; } // 0 = Savings, 1 = Current
+        public AccountType AccountType { get; set; }
 
         [Required(ErrorMessage = "Status is required.")]
-        [Range(0, 1, ErrorMessage = "Status must be 0 (Active) or 1 (Closed). Pending status is not allowed.")]
-        public int Status { get; set; } // 0 = Active, 1 = Closed (Pending not allowed)
+        public AccountStatus Status { get; set; }
     }
 }
