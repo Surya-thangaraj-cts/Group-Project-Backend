@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using UserApi.DTOs;
 using UserApprovalApi.Data;
 using UserApprovalApi.Models;
 
@@ -13,18 +14,42 @@ namespace UserApprovalApi.Repositories
             _db = db;
         }
 
-        public async Task<List<User>> GetPendingUsersAsync(CancellationToken ct = default)
+        public async Task<PagedResult<User>> GetPendingUsersAsync(int pageNumber = 1, int pageSize = 10, CancellationToken ct = default)
         {
-            return await _db.Users
-                .Where(u => u.Status == UserStatus.Pending)
+            var query = _db.Users.Where(u => u.Status == UserStatus.Pending);
+            var totalCount = await query.CountAsync(ct);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync(ct);
+
+            return new PagedResult<User>
+            {
+                Items = items,
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize)
+            };
         }
 
-        public async Task<List<User>> GetApprovedUsersAsync(CancellationToken ct = default)
+        public async Task<PagedResult<User>> GetApprovedUsersAsync(int pageNumber = 1, int pageSize = 10, CancellationToken ct = default)
         {
-            return await _db.Users
-                .Where(u => u.Status != UserStatus.Pending)
+            var query = _db.Users.Where(u => u.Status != UserStatus.Pending);
+            var totalCount = await query.CountAsync(ct);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync(ct);
+
+            return new PagedResult<User>
+            {
+                Items = items,
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize)
+            };
         }
 
         public async Task<User?> GetByIdAsync(string userId, CancellationToken ct = default)

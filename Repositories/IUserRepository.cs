@@ -1,11 +1,12 @@
-﻿using UserApprovalApi.Models;
+﻿using UserApi.DTOs;
+using UserApprovalApi.Models;
 
 namespace UserApprovalApi.Repositories
 {
     public interface IUserRepository
     {
-        Task<List<User>> GetPendingUsersAsync(CancellationToken ct = default);
-        Task<List<User>> GetApprovedUsersAsync(CancellationToken ct = default);
+        Task<PagedResult<User>> GetPendingUsersAsync(int pageNumber = 1, int pageSize = 10, CancellationToken ct = default);
+        Task<PagedResult<User>> GetApprovedUsersAsync(int pageNumber = 1, int pageSize = 10, CancellationToken ct = default);
         Task<User?> GetByIdAsync(string userId, CancellationToken ct = default);
         Task<bool> EmailExistsAsync(string email, string excludeUserId, CancellationToken ct = default);
         Task UpdateAsync(User user, CancellationToken ct = default);

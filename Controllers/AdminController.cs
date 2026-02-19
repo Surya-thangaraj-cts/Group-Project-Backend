@@ -26,10 +26,13 @@ namespace UserApprovalApi.Controllers
         }
 
         [HttpGet("pending-users")]
-        public async Task<IActionResult> PendingUsers(CancellationToken ct)
+        public async Task<IActionResult> PendingUsers([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
         {
-            var list = (await _users.GetPendingUsersAsync(ct))
-                .Select(u => new
+            var paged = await _users.GetPendingUsersAsync(pageNumber, pageSize, ct);
+
+            return Ok(new
+            {
+                items = paged.Items.Select(u => new
                 {
                     u.UserId,
                     u.Name,
@@ -37,10 +40,12 @@ namespace UserApprovalApi.Controllers
                     u.Branch,
                     u.Role,
                     Status = u.Status.ToString()
-                })
-                .ToList();
-
-            return Ok(list);
+                }),
+                paged.TotalCount,
+                paged.PageNumber,
+                paged.PageSize,
+                paged.TotalPages
+            });
         }
 
         [HttpPut("deactivate/{userId}")]
@@ -59,10 +64,13 @@ namespace UserApprovalApi.Controllers
         }
 
         [HttpGet("approved-users")]
-        public async Task<IActionResult> ApprovedUsers(CancellationToken ct)
+        public async Task<IActionResult> ApprovedUsers([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
         {
-            var list = (await _users.GetApprovedUsersAsync(ct))
-                .Select(u => new
+            var paged = await _users.GetApprovedUsersAsync(pageNumber, pageSize, ct);
+
+            return Ok(new
+            {
+                items = paged.Items.Select(u => new
                 {
                     u.UserId,
                     u.Name,
@@ -70,10 +78,12 @@ namespace UserApprovalApi.Controllers
                     u.Branch,
                     u.Role,
                     Status = u.Status.ToString()
-                })
-                .ToList();
-
-            return Ok(list);
+                }),
+                paged.TotalCount,
+                paged.PageNumber,
+                paged.PageSize,
+                paged.TotalPages
+            });
         }
 
         [HttpPut("approve/{userId}")]
