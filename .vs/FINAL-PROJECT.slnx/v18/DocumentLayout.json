@@ -3,18 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464491\\onedrive - cognizant\\desktop\\build\\group-project-backend\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Migrations\\20260218054112_reportsec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260218054112_reportsec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\helpers\\paginationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:helpers\\paginationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\filters\\securityrequirementsoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:filters\\securityrequirementsoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464491\\onedrive - cognizant\\desktop\\build\\group-project-backend\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464491\\onedrive - cognizant\\desktop\\build\\group-project-backend\\models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -317,6 +359,38 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464491\\onedrive - cognizant\\desktop\\build\\group-project-backend\\jwt_userid_claim_fix.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:jwt_userid_claim_fix.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+=======
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\dtos\\compliancemetricsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:dtos\\compliancemetricsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\dtos\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:dtos\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\models\\userstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:models\\userstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\services\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464489\\mybank-backend\\group-project-backend\\userapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:userapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
     }
   ],
   "DocumentGroupContainers": [
@@ -344,6 +418,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Enums.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Models\\Enums.cs",
               "RelativeDocumentMoniker": "Models\\Enums.cs",
@@ -467,12 +542,21 @@
               "ToolTip": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Controllers\\AdminController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQBAAABAAAAAAAAAA==",
+=======
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAuwFYAAAAJAAAAAAAAAA==",
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T06:48:43.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 78,
               "Title": "JWT_USERID_CLAIM_FIX.md",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\JWT_USERID_CLAIM_FIX.md",
@@ -534,10 +618,22 @@
               "ViewState": "AgIAAAQAAAAAAAAAAAA5wA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-13T11:01:25.616Z",
+=======
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwBYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T10:56:34.421Z",
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 12,
               "Title": "20260218044919_reports.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Migrations\\20260218044919_reports.cs",
@@ -709,6 +805,89 @@
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Filters\\SecurityRequirementsOperationFilter.cs",
               "RelativeDocumentMoniker": "Filters\\SecurityRequirementsOperationFilter.cs",
               "ToolTip": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Filters\\SecurityRequirementsOperationFilter.cs",
+=======
+              "DocumentIndex": 2,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Repositories\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Repositories\\IUserRepository.cs",
+              "RelativeToolTip": "Repositories\\IUserRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T06:40:59.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T06:44:07.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T06:48:44.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PaginationHelper.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Helpers\\PaginationHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\PaginationHelper.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Helpers\\PaginationHelper.cs",
+              "RelativeToolTip": "Helpers\\PaginationHelper.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T09:58:40.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAEwMUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T06:57:25.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-14T06:58:51.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SecurityRequirementsOperationFilter.cs",
+              "DocumentMoniker": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Filters\\SecurityRequirementsOperationFilter.cs",
+              "RelativeDocumentMoniker": "Filters\\SecurityRequirementsOperationFilter.cs",
+              "ToolTip": "C:\\Users\\2464489\\mybank-backend\\Group-Project-Backend\\Filters\\SecurityRequirementsOperationFilter.cs",
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "RelativeToolTip": "Filters\\SecurityRequirementsOperationFilter.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAwwCQAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -716,6 +895,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 20,
               "Title": "UpdateNotificationStatusDto.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\DTOs\\UpdateNotificationStatusDto.cs",
@@ -729,6 +909,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 22,
+=======
+              "DocumentIndex": 9,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "UserRole.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Models\\UserRole.cs",
               "RelativeDocumentMoniker": "Models\\UserRole.cs",
@@ -740,7 +923,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 24,
+=======
+              "DocumentIndex": 11,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "JwtService.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Services\\JwtService.cs",
               "RelativeDocumentMoniker": "Services\\JwtService.cs",
@@ -752,6 +939,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 69,
               "Title": "ACCOUNT_STATUS_NOT_UPDATING_FIX.md",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\ACCOUNT_STATUS_NOT_UPDATING_FIX.md",
@@ -765,6 +953,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 67,
+=======
+              "DocumentIndex": 18,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "UserApi.csproj",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\UserApi.csproj",
               "RelativeDocumentMoniker": "UserApi.csproj",
@@ -776,7 +967,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 23,
+=======
+              "DocumentIndex": 10,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -788,6 +983,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 68,
               "Title": "BANK_OFFICER_AUTHORIZATION.md",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\BANK_OFFICER_AUTHORIZATION.md",
@@ -898,6 +1094,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 29,
+=======
+              "DocumentIndex": 12,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
@@ -909,6 +1108,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 31,
               "Title": "ApprovalService.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Services\\ApprovalService.cs",
@@ -1091,6 +1291,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 44,
+=======
+              "DocumentIndex": 13,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\DTOs\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\RegisterRequest.cs",
@@ -1102,6 +1305,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 46,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\DTOs\\PagedResult.cs",
@@ -1164,6 +1368,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 50,
+=======
+              "DocumentIndex": 14,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "ComplianceMetricsDto.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\DTOs\\ComplianceMetricsDto.cs",
               "RelativeDocumentMoniker": "DTOs\\ComplianceMetricsDto.cs",
@@ -1175,7 +1382,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 51,
+=======
+              "DocumentIndex": 15,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "AuthDtos.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\DTOs\\AuthDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\AuthDtos.cs",
@@ -1187,6 +1398,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 53,
               "Title": "AccountDto.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\DTOs\\AccountDto.cs",
@@ -1212,6 +1424,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 54,
+=======
+              "DocumentIndex": 16,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "UserStatus.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Models\\UserStatus.cs",
               "RelativeDocumentMoniker": "Models\\UserStatus.cs",
@@ -1223,6 +1438,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 55,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Models\\Notification.cs",
@@ -1248,6 +1464,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 57,
+=======
+              "DocumentIndex": 17,
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
               "Title": "PasswordService.cs",
               "DocumentMoniker": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\build\\Group-Project-Backend\\Services\\PasswordService.cs",
               "RelativeDocumentMoniker": "Services\\PasswordService.cs",
@@ -1256,6 +1475,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T06:38:28.368Z"
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -1304,6 +1524,8 @@
               "ViewState": "AgIAAFAAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T06:33:35.943Z"
+=======
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
             }
           ]
         }

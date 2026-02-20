@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fee99e863fad646c7a1b1194356d6d821dd2d28")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24b6b55dd0cf49096c940095c0ed58627db184b3")]
+>>>>>>> 03a6203fafca9a173d5b67baf00e3b2823274f73
 [assembly: System.Reflection.AssemblyProductAttribute("UserApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
