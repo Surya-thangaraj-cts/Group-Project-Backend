@@ -11,7 +11,7 @@ public class MappingProfile : Profile
     {
         // ========== Transaction Mappings ==========
         CreateMap<Transaction, TransactionDto>()
-            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
+            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => (int)src.Status))
             .ForMember(dest => dest.ToAccountId, opt => opt.MapFrom(src => src.TargetAccountId));
 
         CreateMap<CreateTransactionDto, Transaction>()

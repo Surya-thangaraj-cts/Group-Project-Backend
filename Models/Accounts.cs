@@ -10,4 +10,6 @@ public class Account
     public decimal Balance { get; set; }
 
     public AccountStatus Status { get; set; } = AccountStatus.Active;
+
+    public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
 }

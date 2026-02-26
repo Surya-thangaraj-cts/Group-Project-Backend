@@ -1,0 +1,129 @@
+@UserApi_HostAddress = https://localhost:7021
+@ManagerToken = YOUR_MANAGER_TOKEN_HERE
+
+################################################################################
+# MANAGER DASHBOARD ENDPOINTS - NEW DEDICATED CONTROLLER
+################################################################################
+
+### Step 1: Manager Login (Copy the token from response)
+POST {{UserApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "userId": "manager1",
+  "password": "Manager@123!"
+}
+
+################################################################################
+# MAIN DASHBOARD ENDPOINT (Recommended - Single Call)
+################################################################################
+
+### Get Complete Dashboard Overview (All data in one call)
+# Returns: Summary metrics + All chart data
+# Use this for dashboard initialization
+GET {{UserApi_HostAddress}}/api/manager-dashboard/overview
+Authorization: Bearer {{ManagerToken}}
+
+################################################################################
+# INDIVIDUAL DASHBOARD ENDPOINTS (For specific data updates)
+################################################################################
+
+### Get Compliance Metrics
+# Returns: Compliance and chart data
+GET {{UserApi_HostAddress}}/api/manager-dashboard/compliance-metrics
+Authorization: Bearer {{ManagerToken}}
+
+### Get Pending Approvals Count Only
+# Returns: { "pendingApprovalsCount": 5 }
+GET {{UserApi_HostAddress}}/api/manager-dashboard/pending-approvals-count
+Authorization: Bearer {{ManagerToken}}
+
+### Get Account Growth Chart Data
+# Returns: Array of { month, newAccounts, activeAccounts }
+GET {{UserApi_HostAddress}}/api/manager-dashboard/account-growth-chart
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transaction Amount Distribution
+# Returns: Array of { label, count }
+GET {{UserApi_HostAddress}}/api/manager-dashboard/amount-distribution
+Authorization: Bearer {{ManagerToken}}
+
+### Get Monthly Transaction Trends
+# Returns: Array of { month, totalVolume, suspiciousCount }
+GET {{UserApi_HostAddress}}/api/manager-dashboard/transaction-trends
+Authorization: Bearer {{ManagerToken}}
+
+### Get Dashboard Summary Statistics
+# Returns: Summary metrics only (no charts)
+GET {{UserApi_HostAddress}}/api/manager-dashboard/summary
+Authorization: Bearer {{ManagerToken}}
+
+################################################################################
+# EXPECTED RESPONSE FORMATS
+################################################################################
+
+# GET /api/manager-dashboard/overview
+# Response:
+# {
+#   "totalTransactions": 1500,
+#   "highValueCount": 120,
+#   "pendingApprovalsCount": 15,
+#   "totalAccounts": 850,
+#   "activeAccounts": 667,
+#   "pendingAccounts": 25,
+#   "accountGrowthRate": 78.5,
+#   "monthlyLabels": ["Jan 2024", "Feb 2024", ..., "Dec 2024"],
+#   "monthlyTxnVolume": [100, 150, 200, ...],
+#   "monthlySuspicious": [5, 8, 10, ...],
+#   "monthlyNewAccounts": [10, 15, 12, ...],
+#   "monthlyActiveAccounts": [600, 615, 627, ...],
+#   "amountBuckets": [
+#     { "label": "0 - 1K", "count": 800 },
+#     { "label": "1K - 5K", "count": 450 },
+#     ...
+#   ]
+# }
+
+# GET /api/manager-dashboard/pending-approvals-count
+# Response:
+# {
+#   "pendingApprovalsCount": 15
+# }
+
+# GET /api/manager-dashboard/account-growth-chart
+# Response:
+# [
+#   { "month": "Jan 2024", "newAccounts": 10, "activeAccounts": 600 },
+#   { "month": "Feb 2024", "newAccounts": 15, "activeAccounts": 615 },
+#   ...
+# ]
+
+# GET /api/manager-dashboard/amount-distribution
+# Response:
+# [
+#   { "label": "0 - 1K", "count": 800 },
+#   { "label": "1K - 5K", "count": 450 },
+#   { "label": "5K - 10K", "count": 150 },
+#   { "label": "10K - 50K", "count": 80 },
+#   { "label": "50K+", "count": 20 }
+# ]
+
+# GET /api/manager-dashboard/transaction-trends
+# Response:
+# [
+#   { "month": "Jan 2024", "totalVolume": 100, "suspiciousCount": 5 },
+#   { "month": "Feb 2024", "totalVolume": 150, "suspiciousCount": 8 },
+#   ...
+# ]
+
+# GET /api/manager-dashboard/summary
+# Response:
+# {
+#   "totalTransactions": 1500,
+#   "highValueCount": 120,
+#   "totalAccounts": 850,
+#   "activeAccounts": 667,
+#   "pendingAccounts": 25,
+#   "pendingApprovalsCount": 15,
+#   "accountGrowthRate": 78.5
+# }

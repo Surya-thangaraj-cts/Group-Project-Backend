@@ -1,0 +1,207 @@
+@UserApi_HostAddress = https://localhost:7021
+@ManagerToken = YOUR_MANAGER_TOKEN_HERE
+
+################################################################################
+# MANAGER TRANSACTIONS CONTROLLER - Transaction Table Integration
+################################################################################
+
+### Step 1: Manager Login (Copy the token from response)
+POST {{UserApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "userId": "manager1",
+  "password": "Manager@123!"
+}
+
+################################################################################
+# TRANSACTION LISTING WITH FILTERS
+################################################################################
+
+### Get All Transactions (Default - Page 1, PageSize 5)
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=5
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transactions with Search Text (Search by Transaction ID or Account ID)
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=5&searchText=101
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transactions Filtered by Status
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=10&status=Completed
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transactions Filtered by Type
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=10&type=Deposit
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transactions with Amount Range Filter
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=10&minAmount=50000&maxAmount=200000
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transactions with Date Range Filter
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=10&startDate=2026-01-01&endDate=2026-02-28
+Authorization: Bearer {{ManagerToken}}
+
+### Get High-Value Transactions Only (Amount > 100,000)
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=10&viewMode=highvalue
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transactions with Multiple Filters Combined
+GET {{UserApi_HostAddress}}/api/manager-transactions?pageNumber=1&pageSize=10&status=Completed&type=Deposit&minAmount=10000&viewMode=all
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transactions with Search + Status + Amount Range
+GET {{UserApi_HostAddress}}/api/manager-transactions?searchText=2&status=Pending&minAmount=5000&maxAmount=50000&pageNumber=1&pageSize=5
+Authorization: Bearer {{ManagerToken}}
+
+################################################################################
+# STATISTICS AND COUNTS
+################################################################################
+
+### Get High-Value Transaction Count
+GET {{UserApi_HostAddress}}/api/manager-transactions/high-value-count
+Authorization: Bearer {{ManagerToken}}
+
+### Get Transaction Statistics Summary
+GET {{UserApi_HostAddress}}/api/manager-transactions/statistics
+Authorization: Bearer {{ManagerToken}}
+
+### Get Available Filter Options (Statuses, Types, Flags)
+GET {{UserApi_HostAddress}}/api/manager-transactions/filter-options
+Authorization: Bearer {{ManagerToken}}
+
+################################################################################
+# EXPORT FUNCTIONALITY
+################################################################################
+
+### Export Transactions to CSV (All)
+GET {{UserApi_HostAddress}}/api/manager-transactions/export/csv
+Authorization: Bearer {{ManagerToken}}
+
+### Export Transactions to CSV (Filtered by Status)
+GET {{UserApi_HostAddress}}/api/manager-transactions/export/csv?status=Completed
+Authorization: Bearer {{ManagerToken}}
+
+### Export Transactions to CSV (High-Value Only)
+GET {{UserApi_HostAddress}}/api/manager-transactions/export/csv?viewMode=highvalue
+Authorization: Bearer {{ManagerToken}}
+
+### Export Transactions to CSV (With Date Range)
+GET {{UserApi_HostAddress}}/api/manager-transactions/export/csv?startDate=2026-01-01&endDate=2026-02-28
+Authorization: Bearer {{ManagerToken}}
+
+### Export Transactions to CSV (With Amount Range)
+GET {{UserApi_HostAddress}}/api/manager-transactions/export/csv?minAmount=50000&maxAmount=200000
+Authorization: Bearer {{ManagerToken}}
+
+### Export Transactions to Excel (All)
+GET {{UserApi_HostAddress}}/api/manager-transactions/export/excel
+Authorization: Bearer {{ManagerToken}}
+
+### Export Transactions to Excel (Filtered)
+GET {{UserApi_HostAddress}}/api/manager-transactions/export/excel?status=Pending&viewMode=all
+Authorization: Bearer {{ManagerToken}}
+
+################################################################################
+# EXPECTED RESPONSE FORMATS
+################################################################################
+
+# GET /api/manager-transactions
+# Response:
+# {
+#   "items": [
+#     {
+#       "transactionId": 1,
+#       "accountId": 101,
+#       "type": 0,  // 0=Deposit, 1=Withdrawal, 2=Transfer
+#       "amount": 150000.00,
+#       "date": "2026-02-25T10:30:00Z",
+#       "status": 0,  // 0=Completed, 1=Pending, 2=Rejected, 3=Failed
+#       "flag": "HighValue"
+#     },
+#     ...
+#   ],
+#   "pageNumber": 1,
+#   "pageSize": 5,
+#   "totalCount": 30,
+#   "totalPages": 6
+# }
+
+# GET /api/manager-transactions/high-value-count
+# Response:
+# {
+#   "highValueCount": 25
+# }
+
+# GET /api/manager-transactions/statistics
+# Response:
+# {
+#   "totalCount": 100,
+#   "highValueCount": 25,
+#   "completedCount": 80,
+#   "pendingCount": 15,
+#   "rejectedCount": 3,
+#   "failedCount": 2,
+#   "totalAmount": 5000000.00,
+#   "averageAmount": 50000.00,
+#   "depositCount": 40,
+#   "withdrawalCount": 35,
+#   "transferCount": 25
+# }
+
+# GET /api/manager-transactions/filter-options
+# Response:
+# {
+#   "statuses": ["Completed", "Pending", "Rejected", "Failed"],
+#   "types": ["Deposit", "Withdrawal", "Transfer"],
+#   "flags": ["Normal", "Suspicious", "HighValue"]
+# }
+
+# GET /api/manager-transactions/export/csv
+# Response: CSV file download
+# Content-Type: text/csv
+# Filename: transactions_20260225_143025.csv
+
+# GET /api/manager-transactions/export/excel
+# Response: Excel file download
+# Content-Type: application/vnd.ms-excel
+# Filename: transactions_20260225_143025.xlsx
+
+################################################################################
+# QUERY PARAMETER REFERENCE
+################################################################################
+
+# PAGINATION:
+# - pageNumber: integer (default: 1)
+# - pageSize: integer (default: 5)
+
+# FILTERS:
+# - searchText: string (searches TransactionId or AccountId)
+# - status: string (Completed | Pending | Rejected | Failed)
+# - type: string (Deposit | Withdrawal | Transfer)
+# - minAmount: decimal
+# - maxAmount: decimal
+# - startDate: datetime (ISO 8601 format: 2026-01-01)
+# - endDate: datetime (ISO 8601 format: 2026-02-28)
+# - viewMode: string (all | highvalue) - highvalue filters amount > 100,000
+# - flag: string (Normal | Suspicious | HighValue)
+
+################################################################################
+# ENUM MAPPINGS (For Angular Integration)
+################################################################################
+
+# TransactionStatus:
+# 0 = Completed
+# 1 = Pending
+# 2 = Rejected
+# 3 = Failed
+
+# TransactionType:
+# 0 = Deposit
+# 1 = Withdrawal
+# 2 = Transfer
+
+# AccountStatus:
+# 0 = Active
+# 1 = Closed
+# 2 = Pending

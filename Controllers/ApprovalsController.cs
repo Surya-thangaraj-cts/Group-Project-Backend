@@ -7,7 +7,7 @@ namespace UserApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = "Officer")]
+[Authorize(Roles = "Manager,Officer")]
 public class ApprovalsController : ControllerBase
 {
     private readonly IApprovalService _approvalService;
