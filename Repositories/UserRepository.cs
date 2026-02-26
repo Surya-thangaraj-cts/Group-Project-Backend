@@ -83,6 +83,42 @@ namespace UserApprovalApi.Repositories
                     (u.UserId.Contains(query) || u.Name.Contains(query) || u.Email.Contains(query) || u.Branch.Contains(query)))
                 .ToListAsync(ct);
         }
+
+        public async Task<(List<User> Items, int TotalCount)> GetPendingUsersPagedAsync(int page, int pageSize, CancellationToken ct = default)
+        {
+            var query = _db.Users.Where(u => u.Status == UserStatus.Pending);
+            var totalCount = await query.CountAsync(ct);
+            var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
+            return (items, totalCount);
+        }
+
+        public async Task<(List<User> Items, int TotalCount)> GetApprovedUsersPagedAsync(int page, int pageSize, CancellationToken ct = default)
+        {
+            var query = _db.Users.Where(u => u.Status != UserStatus.Pending);
+            var totalCount = await query.CountAsync(ct);
+            var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
+            return (items, totalCount);
+        }
+
+        public async Task<(List<User> Items, int TotalCount)> SearchApprovedUsersPagedAsync(string query, int page, int pageSize, CancellationToken ct = default)
+        {
+            var q = _db.Users
+                .Where(u => u.Status != UserStatus.Pending &&
+                    (u.UserId.Contains(query) || u.Name.Contains(query) || u.Email.Contains(query)));
+            var totalCount = await q.CountAsync(ct);
+            var items = await q.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
+            return (items, totalCount);
+        }
+
+        public async Task<(List<User> Items, int TotalCount)> SearchPendingUsersPagedAsync(string query, int page, int pageSize, CancellationToken ct = default)
+        {
+            var q = _db.Users
+                .Where(u => u.Status == UserStatus.Pending &&
+                    (u.UserId.Contains(query) || u.Name.Contains(query) || u.Email.Contains(query) || u.Branch.Contains(query)));
+            var totalCount = await q.CountAsync(ct);
+            var items = await q.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
+            return (items, totalCount);
+        }
     }
 }
 

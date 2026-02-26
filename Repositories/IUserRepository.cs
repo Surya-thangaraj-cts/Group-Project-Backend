@@ -19,5 +19,10 @@ namespace UserApprovalApi.Repositories
 
         Task<List<User>> SearchApprovedUsersAsync(string query, CancellationToken ct = default);
         Task<List<User>> SearchPendingUsersAsync(string query, CancellationToken ct = default);
+
+        Task<(List<User> Items, int TotalCount)> GetPendingUsersPagedAsync(int page, int pageSize, CancellationToken ct = default);
+        Task<(List<User> Items, int TotalCount)> GetApprovedUsersPagedAsync(int page, int pageSize, CancellationToken ct = default);
+        Task<(List<User> Items, int TotalCount)> SearchApprovedUsersPagedAsync(string query, int page, int pageSize, CancellationToken ct = default);
+        Task<(List<User> Items, int TotalCount)> SearchPendingUsersPagedAsync(string query, int page, int pageSize, CancellationToken ct = default);
     }
 }

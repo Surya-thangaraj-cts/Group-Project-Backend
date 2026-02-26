@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using UserApi.DTOs;
 using UserApi.Repositories;
 using UserApprovalApi.Data;
 using UserApprovalApi.DTOs;
@@ -58,11 +59,16 @@ namespace UserApprovalApi.Controllers
             return Ok(new { message = "User deactivated successfully" });
         }
 
-        [HttpGet("approved-users")]
-        public async Task<IActionResult> ApprovedUsers(CancellationToken ct)
+        public async Task<IActionResult> ApprovedUsers([FromQuery] int page = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
         {
-            var list = (await _users.GetApprovedUsersAsync(ct))
-                .Select(u => new
+            if (page < 1) page = 1;
+            if (pageSize < 1) pageSize = 10;
+
+            var (items, totalCount) = await _users.GetApprovedUsersPagedAsync(page, pageSize, ct);
+
+            var result = new PagedResult<object>
+            {
+                Items = items.Select(u => (object)new
                 {
                     u.UserId,
                     u.Name,
@@ -70,11 +76,43 @@ namespace UserApprovalApi.Controllers
                     u.Branch,
                     u.Role,
                     Status = u.Status.ToString()
-                })
-                .ToList();
+                }).ToList(), // Add .ToList() here to materialize the Items
+                TotalCount = totalCount,
+                PageNumber = page,
+                PageSize = pageSize,
+                TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+            };
 
-            return Ok(list);
+            return Ok(result);
         }
+
+        //[HttpGet("approved-users")]
+        //public async Task<IActionResult> ApprovedUsers([FromQuery] int page = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
+        //{
+        //    if (page < 1) page = 1;
+        //    if (pageSize < 1) pageSize = 10;
+
+        //    var (items, totalCount) = await _users.GetApprovedUsersPagedAsync(page, pageSize, ct);
+
+        //    var result = new PagedResult<object>
+        //    {
+        //        Items = items.Select(u => (object)new
+        //        {
+        //            u.UserId,
+        //            u.Name,
+        //            u.Email,
+        //            u.Branch,
+        //            u.Role,
+        //            Status = u.Status.ToString()
+        //        }),
+        //        TotalCount = totalCount,
+        //        PageNumber = page,
+        //        PageSize = pageSize,
+        //        TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+        //    };
+
+        //    return Ok(result);
+        //}
 
         [HttpPut("approve/{userId}")]
         public async Task<IActionResult> Approve(string userId, CancellationToken ct)
@@ -96,13 +134,19 @@ namespace UserApprovalApi.Controllers
         }
 
         [HttpGet("search-users")]
-        public async Task<IActionResult> SearchApprovedUsers([FromQuery] string query, CancellationToken ct)
+        public async Task<IActionResult> SearchApprovedUsers([FromQuery] string query, [FromQuery] int page = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(query))
                 return BadRequest(new { message = "Query parameter is required." });
 
-            var list = (await _users.SearchApprovedUsersAsync(query, ct))
-                .Select(u => new
+            if (page < 1) page = 1;
+            if (pageSize < 1) pageSize = 10;
+
+            var (items, totalCount) = await _users.SearchApprovedUsersPagedAsync(query, page, pageSize, ct);
+
+            var result = new PagedResult<object>
+            {
+                Items = items.Select(u => (object)new
                 {
                     u.UserId,
                     u.Name,
@@ -110,20 +154,30 @@ namespace UserApprovalApi.Controllers
                     u.Branch,
                     u.Role,
                     Status = u.Status.ToString()
-                })
-                .ToList();
+                }),
+                TotalCount = totalCount,
+                PageNumber = page,
+                PageSize = pageSize,
+                TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+            };
 
-            return Ok(list);
+            return Ok(result);
         }
 
         [HttpGet("search-pending")]
-        public async Task<IActionResult> SearchPendingUsers([FromQuery] string query, CancellationToken ct)
+        public async Task<IActionResult> SearchPendingUsers([FromQuery] string query, [FromQuery] int page = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(query))
                 return BadRequest(new { message = "Query parameter is required." });
 
-            var list = (await _users.SearchPendingUsersAsync(query, ct))
-                .Select(u => new
+            if (page < 1) page = 1;
+            if (pageSize < 1) pageSize = 10;
+
+            var (items, totalCount) = await _users.SearchPendingUsersPagedAsync(query, page, pageSize, ct);
+
+            var result = new PagedResult<object>
+            {
+                Items = items.Select(u => (object)new
                 {
                     u.UserId,
                     u.Name,
@@ -131,10 +185,14 @@ namespace UserApprovalApi.Controllers
                     u.Branch,
                     u.Role,
                     Status = u.Status.ToString()
-                })
-                .ToList();
+                }),
+                TotalCount = totalCount,
+                PageNumber = page,
+                PageSize = pageSize,
+                TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+            };
 
-            return Ok(list);
+            return Ok(result);
         }
 
         [HttpPut("edit/{userId}")]

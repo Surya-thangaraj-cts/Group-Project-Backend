@@ -96,6 +96,27 @@
   },
   {
     "ContainingType": "UserApprovalApi.Controllers.AdminController",
+    "Method": "ApprovedUsers",
+    "RelativePath": "api/admin",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserApprovalApi.Controllers.AdminController",
     "Method": "Approve",
     "RelativePath": "api/admin/approve/{userId}",
     "HttpMethod": "PUT",
@@ -108,16 +129,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "UserApprovalApi.Controllers.AdminController",
-    "Method": "ApprovedUsers",
-    "RelativePath": "api/admin/approved-users",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -189,6 +200,16 @@
         "Name": "query",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -204,6 +225,16 @@
       {
         "Name": "query",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],
