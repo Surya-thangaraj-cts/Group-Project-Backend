@@ -12,8 +12,8 @@ using UserApprovalApi.Data;
 namespace UserApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260216070233_Initialsetup")]
-    partial class Initialsetup
+    [Migration("20260226131028_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,11 +95,9 @@ namespace UserApi.Migrations
 
             modelBuilder.Entity("UserApi.Models.Account", b =>
                 {
-                    b.Property<int>("AccountId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountId"));
+                    b.Property<string>("AccountId")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("AccountType")
                         .IsRequired()
@@ -109,9 +107,12 @@ namespace UserApi.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("CustomerId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CustomerName")
                         .IsRequired()
@@ -123,19 +124,20 @@ namespace UserApi.Migrations
 
                     b.HasKey("AccountId");
 
+                    b.HasIndex("CustomerId")
+                        .IsUnique();
+
                     b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("UserApi.Models.Approval", b =>
                 {
-                    b.Property<int>("ApprovalId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("ApprovalId")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ApprovalId"));
-
-                    b.Property<int?>("AccountId")
-                        .HasColumnType("int");
+                    b.Property<string>("AccountId")
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime>("ApprovalDate")
                         .HasColumnType("datetime2");
@@ -154,8 +156,8 @@ namespace UserApi.Migrations
                     b.Property<int>("ReviewerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TransactionId")
-                        .HasColumnType("int");
+                    b.Property<string>("TransactionId")
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -174,14 +176,12 @@ namespace UserApi.Migrations
 
             modelBuilder.Entity("UserApi.Models.Notification", b =>
                 {
-                    b.Property<int>("NotificationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("NotificationId")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NotificationId"));
-
-                    b.Property<int?>("ApprovalId")
-                        .HasColumnType("int");
+                    b.Property<string>("ApprovalId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -194,8 +194,8 @@ namespace UserApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TransactionId")
-                        .HasColumnType("int");
+                    b.Property<string>("TransactionId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -211,11 +211,9 @@ namespace UserApi.Migrations
 
             modelBuilder.Entity("UserApi.Models.Report", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -224,14 +222,13 @@ namespace UserApi.Migrations
 
             modelBuilder.Entity("UserApi.Models.Transaction", b =>
                 {
-                    b.Property<int>("TransactionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("TransactionId")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
-
-                    b.Property<int>("AccountId")
-                        .HasColumnType("int");
+                    b.Property<string>("AccountId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<decimal>("Amount")
                         .HasPrecision(18, 2)
@@ -252,8 +249,8 @@ namespace UserApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TargetAccountId")
-                        .HasColumnType("int");
+                    b.Property<string>("TargetAccountId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
                         .IsRequired()

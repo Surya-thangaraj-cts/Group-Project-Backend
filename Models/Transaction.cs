@@ -2,9 +2,9 @@
 
 public class Transaction
 {
-    public int TransactionId { get; set; }
+    public string TransactionId { get; set; } = string.Empty; // Format: TXN0001
 
-    public int AccountId { get; set; }
+    public string AccountId { get; set; } = string.Empty;
     public Account? Account { get; set; }
 
     public string Type { get; set; } = string.Empty; // Changed from TransactionType enum to string
@@ -15,5 +15,5 @@ public class Transaction
     public string Flag { get; set; } = "Normal";
 
     // For transfers (optional)
-    public int? TargetAccountId { get; set; }
+    public string? TargetAccountId { get; set; }
 }

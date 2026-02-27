@@ -2,8 +2,8 @@
 {
     public class AccountDto
     {
-        public int AccountId { get; set; }
-        //public string CustomerName { get; set; } = "";
+        public string AccountId { get; set; } = string.Empty;
+        public string CustomerName { get; set; } = "";
         public string CustomerId { get; set; } = "";
         public int AccountType { get; set; } // 0 = Savings, 1 = Current
         public decimal Balance { get; set; }

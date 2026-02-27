@@ -2,7 +2,7 @@
 
 public class Account
 {
-    public int AccountId { get; set; } // Identity PK
+    public string AccountId { get; set; } = string.Empty; // Format: ACC0001
 
     public string CustomerName { get; set; } = "";
     public string CustomerId { get; set; } = "";

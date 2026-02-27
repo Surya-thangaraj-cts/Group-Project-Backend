@@ -50,18 +50,35 @@ namespace UserApi.Repositories
             };
         }
 
-        public async Task<Account?> GetByIdAsync(int id)
+        public async Task<Account?> GetByIdAsync(string id)
         {
             return await _context.Accounts.FirstOrDefaultAsync(a => a.AccountId == id);
         }
 
-        public async Task FindAsync(int id)
+        public async Task<Account?> GetByCustomerIdAsync(string customerId)
+        {
+            return await _context.Accounts.FirstOrDefaultAsync(a => a.CustomerId == customerId);
+        }
+
+        public async Task<bool> CustomerIdExistsAsync(string customerId)
+        {
+            return await _context.Accounts.AnyAsync(a => a.CustomerId == customerId);
+        }
+
+        public async Task<bool> AccountIdExistsAsync(string accountId)
+        {
+            return await _context.Accounts.AnyAsync(a => a.AccountId == accountId);
+        }
+
+        public async Task FindAsync(string id)
         {
             await _context.Accounts.FindAsync(id);
         }
 
         public async Task<Account> AddAsync(Account account)
         {
+            // Account ID is provided by the officer - no auto-generation
+            // Validation is done in the controller
             _context.Accounts.Add(account);
             await _context.SaveChangesAsync();
             return account;
@@ -83,7 +100,7 @@ namespace UserApi.Repositories
             return existingAccount;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(string id)
         {
             var account = await _context.Accounts.FindAsync(id);
             if (account == null)

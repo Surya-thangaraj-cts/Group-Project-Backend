@@ -5,11 +5,12 @@ namespace UserApi.Repositories;
 public interface IApprovalRepository
 {
     Task<IEnumerable<Approval>> GetAllAsync();
-    Task<Approval?> GetByIdAsync(int id);
+    Task<Approval?> GetByIdAsync(string id);
+    Task<bool> ApprovalIdExistsAsync(string approvalId);
     Task<Approval> AddAsync(Approval approval);
     Task<Approval> UpdateAsync(Approval approval);
-    Task<bool> DeleteAsync(int id);
-    Task<Approval?> GetByTransactionIdAsync(int transactionId);
-    Task<Approval?> GetPendingAccountApprovalAsync(int accountId);
-    Task<IEnumerable<Approval>> GetAllWithDetailsAsync(); // Add this method
+    Task<bool> DeleteAsync(string id);
+    Task<Approval?> GetByTransactionIdAsync(string transactionId);
+    Task<Approval?> GetPendingAccountApprovalAsync(string accountId);
+    Task<IEnumerable<Approval>> GetAllWithDetailsAsync();
 }

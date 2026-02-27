@@ -10,8 +10,8 @@ public interface IApprovalService
         int pageSize = 10,
         string? decision = null,
         string? type = null);
-    Task<Approval?> GetApprovalByIdAsync(int id);
-    Task<Approval> ProcessApprovalDecisionAsync(int id, UpdateApprovalDto dto);
+    Task<Approval?> GetApprovalByIdAsync(string id);
+    Task<Approval> ProcessApprovalDecisionAsync(string id, UpdateApprovalDto dto);
     Task<PagedResult<ApprovalDetailsDto>> GetAllApprovalDetailsAsync(
         int pageNumber = 1,
         int pageSize = 10,

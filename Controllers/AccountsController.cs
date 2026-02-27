@@ -67,17 +67,45 @@ public class AccountsController : ControllerBase
         }
     }
 
-    [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetById(int id)
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(string id)
     {
         try
         {
             var account = await _accountRepository.GetByIdAsync(id);
-            return account is null ? NotFound() : Ok(account);
+            return account is null ? NotFound() : Ok(_mapper.Map<AccountDto>(account));
         }
         catch (Exception ex)
         {
             return StatusCode(500, new { error = "An error occurred while retrieving the account.", details = ex.Message });
+        }
+    }
+
+    [HttpGet("check-customer/{customerId}")]
+    public async Task<IActionResult> CheckCustomerIdExists(string customerId)
+    {
+        try
+        {
+            var exists = await _accountRepository.CustomerIdExistsAsync(customerId);
+            return Ok(new { exists });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "An error occurred while checking customer ID.", details = ex.Message });
+        }
+    }
+
+    [HttpGet("check-account/{accountId}")]
+    public async Task<IActionResult> CheckAccountIdExists(string accountId)
+    {
+        try
+        {
+            var exists = await _accountRepository.AccountIdExistsAsync(accountId);
+            return Ok(new { exists });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "An error occurred while checking account ID.", details = ex.Message });
         }
     }
 
@@ -95,9 +123,23 @@ public class AccountsController : ControllerBase
             if (dto is null)
                 return BadRequest("Request body is required.");
 
+            // Check if Account ID already exists
+            if (await _accountRepository.AccountIdExistsAsync(dto.AccountId))
+            {
+                return BadRequest(new { error = "Account ID already exists. Please use a unique Account ID." });
+            }
+
+            // Check if Customer ID already exists
+            if (await _accountRepository.CustomerIdExistsAsync(dto.CustomerId))
+            {
+                return BadRequest(new { error = "Customer ID already exists. Please use a unique Customer ID." });
+            }
+
             // Create account with Pending status and Balance = 0
+            // Account ID is provided by the officer
             var account = new Account
             {
+                AccountId = dto.AccountId,  // Officer provides the Account ID
                 CustomerName = dto.CustomerName,
                 CustomerId = dto.CustomerId,
                 AccountType = (AccountType)dto.AccountType,
@@ -105,7 +147,7 @@ public class AccountsController : ControllerBase
                 Status = AccountStatus.Pending // Set to Pending initially
             };
 
-            // Save account to get AccountId
+            // Save account (Account ID is already set from DTO)
             var createdAccount = await _accountRepository.AddAsync(account);
 
             // Create approval record for account creation
@@ -144,8 +186,8 @@ public class AccountsController : ControllerBase
         }
     }
 
-    [HttpPut("{id:int}")]
-    public async Task<IActionResult> Update(int id, UpdateAccountDto updated)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, UpdateAccountDto updated)
     {
         try
         {
@@ -197,8 +239,8 @@ public class AccountsController : ControllerBase
         }
     }
 
-    [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         try
         {

@@ -77,6 +77,13 @@ namespace UserApprovalApi.Data
             // ----- Account entity configuration -----
             modelBuilder.Entity<Account>(entity =>
             {
+                entity.HasKey(a => a.AccountId);
+                entity.Property(a => a.AccountId)
+                      .HasMaxLength(20)
+                      .ValueGeneratedNever();
+
+                entity.HasIndex(a => a.CustomerId).IsUnique();
+
                 entity.Property(a => a.Balance)
                       .HasPrecision(18, 2);
 
@@ -90,6 +97,11 @@ namespace UserApprovalApi.Data
             // ----- Transaction entity configuration -----
             modelBuilder.Entity<Transaction>(entity =>
             {
+                entity.HasKey(t => t.TransactionId);
+                entity.Property(t => t.TransactionId)
+                      .HasMaxLength(20)
+                      .ValueGeneratedNever();
+
                 entity.Property(t => t.Amount)
                       .HasPrecision(18, 2);
 
@@ -103,6 +115,11 @@ namespace UserApprovalApi.Data
             // ----- Approval entity configuration -----
             modelBuilder.Entity<Approval>(entity =>
             {
+                entity.HasKey(a => a.ApprovalId);
+                entity.Property(a => a.ApprovalId)
+                      .HasMaxLength(20)
+                      .ValueGeneratedNever();
+
                 entity.Property(a => a.Type)
                       .HasConversion<string>();
 
@@ -124,11 +141,25 @@ namespace UserApprovalApi.Data
             // ----- Notification entity configuration -----
             modelBuilder.Entity<Notification>(entity =>
             {
+                entity.HasKey(n => n.NotificationId);
+                entity.Property(n => n.NotificationId)
+                      .HasMaxLength(20)
+                      .ValueGeneratedNever();
+
                 entity.Property(n => n.Type)
                       .HasConversion<string>();
 
                 entity.Property(n => n.Status)
                       .HasConversion<string>();
+            });
+
+            // ----- Report entity configuration -----
+            modelBuilder.Entity<Report>(entity =>
+            {
+                entity.HasKey(r => r.Id);
+                entity.Property(r => r.Id)
+                      .HasMaxLength(20)
+                      .ValueGeneratedNever();
             });
         }
 

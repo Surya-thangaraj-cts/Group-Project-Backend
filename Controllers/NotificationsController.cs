@@ -36,7 +36,7 @@ public class NotificationsController : ControllerBase
 
     // GET: api/notifications/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetNotificationById(int id)
+    public async Task<IActionResult> GetNotificationById(string id)
     {
         try
         {
@@ -55,7 +55,7 @@ public class NotificationsController : ControllerBase
 
     // PUT: api/notifications/{id}/status
     [HttpPut("{id}/status")]
-    public async Task<IActionResult> UpdateNotificationStatus(int id, [FromBody] UpdateNotificationStatusDto dto)
+    public async Task<IActionResult> UpdateNotificationStatus(string id, [FromBody] UpdateNotificationStatusDto dto)
     {
         try
         {
@@ -78,7 +78,7 @@ public class NotificationsController : ControllerBase
 
     // DELETE: api/notifications/{id}
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteNotification(int id)
+    public async Task<IActionResult> DeleteNotification(string id)
     {
         try
         {

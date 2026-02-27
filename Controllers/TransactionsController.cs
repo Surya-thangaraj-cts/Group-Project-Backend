@@ -25,7 +25,7 @@ public class TransactionsController : ControllerBase
     public async Task<ActionResult<PagedResult<TransactionDto>>> GetTransactions(
         [FromQuery] int pageNumber = 1,
         [FromQuery] int pageSize = 10,
-        [FromQuery] int? accountId = null,
+        [FromQuery] string? accountId = null,
         [FromQuery] string? type = null,
         [FromQuery] string? status = null,
         [FromQuery] string? flag = null,
@@ -57,7 +57,7 @@ public class TransactionsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<TransactionDto>> GetTransaction(int id)
+    public async Task<ActionResult<TransactionDto>> GetTransaction(string id)
     {
         try
         {

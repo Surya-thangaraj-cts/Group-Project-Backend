@@ -59,6 +59,8 @@ namespace UserApprovalApi.Controllers
             return Ok(new { message = "User deactivated successfully" });
         }
 
+
+        [HttpGet("approved-users")]
         public async Task<IActionResult> ApprovedUsers([FromQuery] int page = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
         {
             if (page < 1) page = 1;

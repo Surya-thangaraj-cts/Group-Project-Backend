@@ -4,17 +4,17 @@ namespace UserApi.Models;
 
 public class Approval
 {
-    public int ApprovalId { get; set; }
+    public string ApprovalId { get; set; } = string.Empty; // Format: APP0001
 
     // Type of approval request
     public ApprovalType Type { get; set; }
 
     // For transaction approvals (high-value transactions)
-    public int? TransactionId { get; set; }
+    public string? TransactionId { get; set; }
     public Transaction? Transaction { get; set; }
 
     // For account update/creation approvals
-    public int? AccountId { get; set; }
+    public string? AccountId { get; set; }
     public Account? Account { get; set; }
 
     // Pending changes for account updates/creation (stored as JSON)

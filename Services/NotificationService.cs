@@ -34,12 +34,12 @@ public class NotificationService : INotificationService
         return notifications;
     }
 
-    public async Task<Notification?> GetNotificationByIdAsync(int id)
+    public async Task<Notification?> GetNotificationByIdAsync(string id)
     {
         return await _notificationRepository.GetByIdAsync(id);
     }
 
-    public async Task<Notification> UpdateNotificationStatusAsync(int id, UpdateNotificationStatusDto dto)
+    public async Task<Notification> UpdateNotificationStatusAsync(string id, UpdateNotificationStatusDto dto)
     {
         var notification = await _notificationRepository.GetByIdAsync(id);
         if (notification == null)
@@ -58,12 +58,12 @@ public class NotificationService : INotificationService
         return await _notificationRepository.UpdateAsync(notification);
     }
 
-    public async Task DeleteNotificationAsync(int id)
+    public async Task DeleteNotificationAsync(string id)
     {
         await _notificationRepository.DeleteAsync(id);
     }
 
-    public async Task CreateNotificationForHighValueTransactionAsync(int transactionId, int userId, decimal amount, string transactionType)
+    public async Task CreateNotificationForHighValueTransactionAsync(string transactionId, int userId, decimal amount, string transactionType)
     {
         var notification = new Notification
         {
@@ -79,7 +79,7 @@ public class NotificationService : INotificationService
         await _notificationRepository.AddAsync(notification);
     }
 
-    public async Task CreateNotificationForApprovalAsync(int approvalId, int userId, ApprovalType approvalType)
+    public async Task CreateNotificationForApprovalAsync(string approvalId, int userId, ApprovalType approvalType)
     {
         var message = approvalType switch
         {
@@ -103,12 +103,12 @@ public class NotificationService : INotificationService
         await _notificationRepository.AddAsync(notification);
     }
 
-    public async Task DeleteNotificationByApprovalIdAsync(int approvalId)
+    public async Task DeleteNotificationByApprovalIdAsync(string approvalId)
     {
         await _notificationRepository.DeleteByApprovalIdAsync(approvalId);
     }
 
-    public async Task DeleteNotificationByTransactionIdAsync(int transactionId)
+    public async Task DeleteNotificationByTransactionIdAsync(string transactionId)
     {
         await _notificationRepository.DeleteByTransactionIdAsync(transactionId);
     }

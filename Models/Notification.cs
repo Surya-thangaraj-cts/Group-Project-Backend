@@ -4,7 +4,7 @@ namespace UserApi.Models;
 
 public class Notification
 {
-    public int NotificationId { get; set; }
+    public string NotificationId { get; set; } = string.Empty; // Format: NOT0001
 
     public int UserId { get; set; }
 
@@ -14,6 +14,6 @@ public class Notification
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
     // Relational fields
-    public int? ApprovalId { get; set; }
-    public int? TransactionId { get; set; }
+    public string? ApprovalId { get; set; }
+    public string? TransactionId { get; set; }
 }

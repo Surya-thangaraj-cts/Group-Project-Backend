@@ -35,7 +35,7 @@ public class TransactionService : ITransactionService
     public async Task<UserApi.DTOs.PagedResult<Transaction>> GetAllTransactionsAsync(
         int pageNumber = 1,
         int pageSize = 10,
-        int? accountId = null,
+        string? accountId = null,
         string? type = null,
         string? status = null,
         string? flag = null,
@@ -45,10 +45,10 @@ public class TransactionService : ITransactionService
         var transactions = await _transactionRepository.GetAllAsync();
 
         // Apply filters (reuse your existing filter logic)
-        if (accountId.HasValue)
+        if (!string.IsNullOrWhiteSpace(accountId))
         {
             transactions = transactions.Where(t =>
-                t.AccountId == accountId.Value || t.TargetAccountId == accountId.Value);
+                t.AccountId == accountId || t.TargetAccountId == accountId);
         }
 
         if (!string.IsNullOrWhiteSpace(type))
@@ -95,7 +95,7 @@ public class TransactionService : ITransactionService
         };
     }
 
-    public async Task<Transaction?> GetTransactionByIdAsync(int id)
+    public async Task<Transaction?> GetTransactionByIdAsync(string id)
     {
         return await _transactionRepository.GetByIdAsync(id);
     }
@@ -121,12 +121,6 @@ public class TransactionService : ITransactionService
             throw new InvalidOperationException($"Cannot perform transactions on pending account {dto.AccountId}. Account must be approved first.");
         }
 
-        // Check if source account is pending
-        if (sourceAccount.Status == AccountStatus.Pending)
-        {
-            throw new InvalidOperationException($"Cannot perform transactions on pending account {dto.AccountId}. Account must be approved first.");
-        }
-
         // Validate sufficient balance for withdrawals and transfers BEFORE creating transaction
         if (dto.TransactionType == 2) // Withdrawal
         {
@@ -137,7 +131,7 @@ public class TransactionService : ITransactionService
         }
         else if (dto.TransactionType == 3) // Transfer
         {
-            if (dto.ToAccountId == null)
+            if (string.IsNullOrWhiteSpace(dto.ToAccountId))
             {
                 throw new ArgumentException("Target account is required for transfers.");
             }
@@ -148,7 +142,7 @@ public class TransactionService : ITransactionService
             }
 
             // Validate target account exists and is not closed
-            var targetAccount = await _accountRepository.GetByIdAsync(dto.ToAccountId.Value);
+            var targetAccount = await _accountRepository.GetByIdAsync(dto.ToAccountId);
             if (targetAccount == null)
             {
                 throw new InvalidOperationException($"Target account with ID {dto.ToAccountId} not found.");
@@ -249,7 +243,7 @@ public class TransactionService : ITransactionService
                     break;
 
                 case 3: // Transfer
-                    var targetAccount = await _accountRepository.GetByIdAsync(dto.ToAccountId!.Value);
+                    var targetAccount = await _accountRepository.GetByIdAsync(dto.ToAccountId!);
                     if (targetAccount == null)
                     {
                         throw new InvalidOperationException($"Target account with ID {dto.ToAccountId} not found.");
@@ -275,12 +269,12 @@ public class TransactionService : ITransactionService
         return await _transactionRepository.AddAsync(transaction);
     }
 
-    public async Task<Transaction> UpdateTransactionAsync(int id, Transaction transaction)
+    public async Task<Transaction> UpdateTransactionAsync(string id, Transaction transaction)
     {
         return await _transactionRepository.UpdateAsync(transaction);
     }
 
-    public async Task<bool> DeleteTransactionAsync(int id)
+    public async Task<bool> DeleteTransactionAsync(string id)
     {
         return await _transactionRepository.DeleteAsync(id);
     }

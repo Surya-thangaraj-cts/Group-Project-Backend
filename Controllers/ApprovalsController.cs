@@ -55,8 +55,8 @@ public class ApprovalsController : ControllerBase
         }
     }
 
-    [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetById(int id)
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(string id)
     {
         try
         {
@@ -69,8 +69,8 @@ public class ApprovalsController : ControllerBase
         }
     }
 
-    [HttpPut("{id:int}")]
-    public async Task<IActionResult> UpdateDecision(int id, UpdateApprovalDto dto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateDecision(string id, UpdateApprovalDto dto)
     {
         try
         {

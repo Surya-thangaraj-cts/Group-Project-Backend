@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using UserApi.Models;
 using UserApi.Repositories;
 using UserApprovalApi.Data;
+using UserApi.Helpers;
 
 
 namespace UserApi.Repositories;
@@ -25,7 +26,7 @@ public class ApprovalRepository : IApprovalRepository
             .ToListAsync();
     }
 
-    public async Task<Approval?> GetByIdAsync(int id)
+    public async Task<Approval?> GetByIdAsync(string id)
     {
         return await _context.Approvals
             .Include(a => a.Transaction)
@@ -34,8 +35,22 @@ public class ApprovalRepository : IApprovalRepository
             .FirstOrDefaultAsync(a => a.ApprovalId == id);
     }
 
+    public async Task<bool> ApprovalIdExistsAsync(string approvalId)
+    {
+        return await _context.Approvals.AnyAsync(a => a.ApprovalId == approvalId);
+    }
+
     public async Task<Approval> AddAsync(Approval approval)
     {
+        // Generate unique Approval ID
+        string newApprovalId;
+        do
+        {
+            newApprovalId = IdGenerator.GenerateApprovalId();
+        } while (await ApprovalIdExistsAsync(newApprovalId));
+
+        approval.ApprovalId = newApprovalId;
+
         _context.Approvals.Add(approval);
         await _context.SaveChangesAsync();
         return approval;
@@ -48,9 +63,9 @@ public class ApprovalRepository : IApprovalRepository
         return approval;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
-        var approval = await _context.Approvals.FindAsync(id);
+        var approval = await _context.Approvals.FirstOrDefaultAsync(a => a.ApprovalId == id);
         if (approval == null) return false;
 
         _context.Approvals.Remove(approval);
@@ -58,14 +73,14 @@ public class ApprovalRepository : IApprovalRepository
         return true;
     }
 
-    public async Task<Approval?> GetByTransactionIdAsync(int transactionId)
+    public async Task<Approval?> GetByTransactionIdAsync(string transactionId)
     {
         return await _context.Approvals
             .Include(a => a.Transaction)
             .FirstOrDefaultAsync(a => a.TransactionId == transactionId);
     }
 
-    public async Task<Approval?> GetPendingAccountApprovalAsync(int accountId)
+    public async Task<Approval?> GetPendingAccountApprovalAsync(string accountId)
     {
         return await _context.Approvals
             .Include(a => a.Account)

@@ -62,12 +62,12 @@ public class ApprovalService : IApprovalService
         };
     }
 
-    public async Task<Approval?> GetApprovalByIdAsync(int id)
+    public async Task<Approval?> GetApprovalByIdAsync(string id)
     {
         return await _approvalRepository.GetByIdAsync(id);
     }
 
-    public async Task<Approval> ProcessApprovalDecisionAsync(int approvalId, UpdateApprovalDto dto)
+    public async Task<Approval> ProcessApprovalDecisionAsync(string approvalId, UpdateApprovalDto dto)
     {
         Console.WriteLine($"🔍 Processing approval {approvalId}");
 
@@ -106,9 +106,9 @@ public class ApprovalService : IApprovalService
                 await HandleAccountCreationApproval(approval, decision);
                 break;
             case ApprovalType.HighValueTransaction:
-                if (approval.TransactionId.HasValue)
+                if (!string.IsNullOrWhiteSpace(approval.TransactionId))
                 {
-                    var transaction = await _transactionRepository.GetByIdAsync(approval.TransactionId.Value);
+                    var transaction = await _transactionRepository.GetByIdAsync(approval.TransactionId);
                     if (transaction != null)
                     {
                         var sourceAccount = await _accountRepository.GetByIdAsync(transaction.AccountId);
@@ -128,12 +128,12 @@ public class ApprovalService : IApprovalService
                         // For transfers, validate target account
                         if (transaction.Type == "Transfer")
                         {
-                            if (transaction.TargetAccountId == null)
+                            if (string.IsNullOrWhiteSpace(transaction.TargetAccountId))
                             {
                                 throw new InvalidOperationException("Target account is required for transfer transactions.");
                             }
 
-                            var targetAccount = await _accountRepository.GetByIdAsync(transaction.TargetAccountId.Value);
+                            var targetAccount = await _accountRepository.GetByIdAsync(transaction.TargetAccountId);
                             if (targetAccount == null)
                             {
                                 throw new InvalidOperationException($"Target account {transaction.TargetAccountId} not found.");
@@ -167,9 +167,9 @@ public class ApprovalService : IApprovalService
                 }
                 break;
             case ApprovalType.AccountUpdate:
-                if (approval.AccountId.HasValue)
+                if (!string.IsNullOrWhiteSpace(approval.AccountId))
                 {
-                    var account = await _accountRepository.GetByIdAsync(approval.AccountId.Value);
+                    var account = await _accountRepository.GetByIdAsync(approval.AccountId);
                     if (account != null)
                     {
                         if (decision == ApprovalDecision.Approve)
@@ -238,12 +238,12 @@ public class ApprovalService : IApprovalService
                 break;
 
             case "Transfer":
-                if (transaction.TargetAccountId == null)
+                if (string.IsNullOrWhiteSpace(transaction.TargetAccountId))
                 {
                     throw new InvalidOperationException("Target account is required for transfers.");
                 }
 
-                var targetAccount = await _accountRepository.GetByIdAsync(transaction.TargetAccountId.Value);
+                var targetAccount = await _accountRepository.GetByIdAsync(transaction.TargetAccountId);
                 if (targetAccount == null)
                 {
                     throw new InvalidOperationException($"Target account {transaction.TargetAccountId} not found.");
@@ -270,15 +270,15 @@ public class ApprovalService : IApprovalService
 
     private async Task HandleAccountCreationApproval(Approval approval, ApprovalDecision decision)
     {
-        if (!approval.AccountId.HasValue)
+        if (string.IsNullOrWhiteSpace(approval.AccountId))
         {
             throw new InvalidOperationException("AccountId is required for account creation approval.");
         }
 
-        var account = await _accountRepository.GetByIdAsync(approval.AccountId.Value);
+        var account = await _accountRepository.GetByIdAsync(approval.AccountId);
         if (account == null)
         {
-            throw new InvalidOperationException($"Account with ID {approval.AccountId.Value} not found.");
+            throw new InvalidOperationException($"Account with ID {approval.AccountId} not found.");
         }
 
         if (decision == ApprovalDecision.Approve)
