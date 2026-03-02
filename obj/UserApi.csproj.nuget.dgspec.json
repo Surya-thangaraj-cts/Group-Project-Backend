@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\UserApi.csproj": {}
+    "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\My-Bank Backend\\UserApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\UserApi.csproj": {
+    "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\My-Bank Backend\\UserApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\UserApi.csproj",
+        "projectUniqueName": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\My-Bank Backend\\UserApi.csproj",
         "projectName": "UserApi",
-        "projectPath": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\UserApi.csproj",
-        "packagesPath": "C:\\Users\\2464488\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\obj\\",
+        "projectPath": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\My-Bank Backend\\UserApi.csproj",
+        "packagesPath": "C:\\Users\\2464491\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2464491\\OneDrive - Cognizant\\Desktop\\My-Bank Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2464488\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2464491\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -107,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

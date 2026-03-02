@@ -9,7 +9,7 @@ public static class IdGenerator
     /// </summary>
     public static string GenerateTransactionId()
     {
-        return $"TXN{_random.Next(0, 9999):D4}";
+        return $"TXN{_random.Next(1000, 99999)}";
     }
 
     /// <summary>
@@ -17,22 +17,46 @@ public static class IdGenerator
     /// </summary>
     public static string GenerateApprovalId()
     {
-        return $"APP{_random.Next(0, 9999):D4}";
+        return $"APP{_random.Next(1000, 99999)}";
     }
 
     /// <summary>
-    /// Generates Notification ID in format: NOT + 4 digits (e.g., NOT0001)
+    /// Generates Notification ID in format: NF + 4 digits (e.g., NF1234)
     /// </summary>
     public static string GenerateNotificationId()
     {
-        return $"NOT{_random.Next(0, 9999):D4}";
+        return $"NF{_random.Next(1000, 99999)}";
     }
 
     /// <summary>
-    /// Generates Report ID in format: RPT + 4 digits (e.g., RPT0001)
+    /// Generates Report ID in format: RP + 4 digits (e.g., RP1234)
     /// </summary>
     public static string GenerateReportId()
     {
-        return $"RPT{_random.Next(0, 9999):D4}";
+        return $"RP{_random.Next(1000, 99999)}";
+    }
+
+    /// <summary>
+    /// Generates Account ID in format: ACC + 4 digits (e.g., ACC1234)
+    /// </summary>
+    public static string GenerateAccountId()
+    {
+        return $"ACC{_random.Next(1000, 99999)}";
+    }
+
+    /// <summary>
+    /// Generates Audit Log ID in format: AUD + 4 digits (e.g., AUD1234)
+    /// </summary>
+    public static string GenerateAuditLogId()
+    {
+        return $"AUD{_random.Next(1000, 99999)}";
+    }
+
+    /// <summary>
+    /// Generates Account Type ID in format: AT + 4 digits (e.g., AT1234)
+    /// </summary>
+    public static string GenerateAccountTypeId()
+    {
+        return $"AT{_random.Next(1000, 99999)}";
     }
 }
