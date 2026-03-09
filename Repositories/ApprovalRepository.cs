@@ -93,6 +93,7 @@ public class ApprovalRepository : IApprovalRepository
             .Include(a => a.Account)
             .Include(a => a.Reviewer)
             .Include(a => a.Transaction)
+                .ThenInclude(t => t.Account)
             .ToListAsync();
     }
 }

@@ -188,12 +188,14 @@ public class TransactionService : ITransactionService
             // Save transaction first to get TransactionId
             var savedTransaction = await _transactionRepository.AddAsync(transaction);
 
-            // Create approval record
+            // Ensure Account navigation property is loaded from DB
+            var account = await _accountRepository.GetByIdAsync(savedTransaction.AccountId);
             var approval = new Approval
             {
                 Type = ApprovalType.HighValueTransaction, // Set the approval type
                 TransactionId = savedTransaction.TransactionId,
-                AccountId = null, // This is a transaction approval, not account approval
+                AccountId = account?.AccountId ?? savedTransaction.AccountId, // Always set AccountId
+                Account = account, // Always set Account navigation property
                 ReviewerId = 1, // Random reviewer ID (you can implement proper reviewer selection logic)
                 Decision = ApprovalDecision.Pending,
                 Comments = $"High-value {transactionType} transaction of ₹{dto.Amount:N2} requires approval",

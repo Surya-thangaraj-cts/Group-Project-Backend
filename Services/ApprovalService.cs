@@ -321,8 +321,12 @@ public class ApprovalService : IApprovalService
         {
             ApprovalId = a.ApprovalId,
             Type = a.Type.ToString(),
-            AccountId = a.AccountId,
-            CustomerName = a.Account?.CustomerName,
+            AccountId = a.Type == ApprovalType.HighValueTransaction 
+                ? a.Transaction != null ? a.Transaction.AccountId : null
+                : a.AccountId,
+            CustomerName = a.Type == ApprovalType.HighValueTransaction
+                ? a.Transaction != null ? a.Transaction.Account?.CustomerName : null
+                : a.Account?.CustomerName,
             ReviewerId = a.ReviewerId,
             Decision = a.Decision.ToString(),
             PendingChanges = a.PendingChanges,
