@@ -23,6 +23,7 @@ public class ApprovalRepository : IApprovalRepository
             .Include(a => a.Transaction)
             .Include(a => a.Account)
             .Include(a => a.Reviewer)
+            .OrderBy(a => a.ApprovalDate)
             .ToListAsync();
     }
 

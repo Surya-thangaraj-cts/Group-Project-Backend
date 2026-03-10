@@ -170,7 +170,7 @@ public class TransactionService : ITransactionService
             Type = transactionType,
             Amount = dto.Amount,
             Narrative = dto.Narrative,
-            Date = DateTime.UtcNow,
+            Date = DateTime.Now,
             // Only set TargetAccountId for Transfer transactions (type 3), otherwise null
             TargetAccountId = dto.TransactionType == 3 ? dto.ToAccountId : null,
             // Set Flag to "High" for high-value transactions (> 1 lakh), otherwise "Normal"
@@ -199,7 +199,7 @@ public class TransactionService : ITransactionService
                 ReviewerId = 1, // Random reviewer ID (you can implement proper reviewer selection logic)
                 Decision = ApprovalDecision.Pending,
                 Comments = $"High-value {transactionType} transaction of ₹{dto.Amount:N2} requires approval",
-                ApprovalDate = DateTime.UtcNow,
+                ApprovalDate = DateTime.Now,
                 PendingChanges = null
             };
 

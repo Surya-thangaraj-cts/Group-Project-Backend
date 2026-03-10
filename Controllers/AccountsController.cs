@@ -159,7 +159,7 @@ public class AccountsController : ControllerBase
                 ReviewerId = 1, // Random reviewer ID (implement proper logic)
                 Decision = ApprovalDecision.Pending,
                 Comments = $"New account creation request for customer {dto.CustomerName}",
-                ApprovalDate = DateTime.UtcNow,
+                ApprovalDate = DateTime.Now,
                 PendingChanges = JsonSerializer.Serialize(dto) // Store creation details
             };
 
