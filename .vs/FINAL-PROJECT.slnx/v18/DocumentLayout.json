@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\dtos\\notificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:dtos\\notificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\controllers\\managertransactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:controllers\\managertransactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,20 +67,12 @@
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:repositories\\itransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\services\\approvalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -171,10 +187,6 @@
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:dtos\\createtransactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\dtos\\notificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:dtos\\notificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\repositories\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:repositories\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -193,18 +205,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\services\\iapprovalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\iapprovalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|solutionrelative:controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C6DBF04-8DB2-C902-88D9-B79AA27DED41}|UserApi.csproj|c:\\users\\2464488\\source\\repos\\group-project-backend-fin\\dtos\\createaccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -226,7 +226,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -238,33 +238,110 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NotificationsController.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\NotificationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationsController.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\NotificationsController.cs",
+              "RelativeToolTip": "Controllers\\NotificationsController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAgwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:06:25.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotificationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\NotificationRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\NotificationRepository.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\NotificationRepository.cs",
+              "RelativeToolTip": "Repositories\\NotificationRepository.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAuwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T12:59:50.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\INotificationService.cs",
+              "RelativeDocumentMoniker": "Services\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\INotificationService.cs",
+              "RelativeToolTip": "Services\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:02:03.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "Services\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\NotificationService.cs*",
+              "RelativeToolTip": "Services\\NotificationService.cs*",
+              "ViewState": "AgIAAEEAAAAAAAAAAAA9wEkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:05:33.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NotificationDto.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\NotificationDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\NotificationDto.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\NotificationDto.cs",
+              "RelativeToolTip": "DTOs\\NotificationDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T12:57:37.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAkwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T06:57:25.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ITransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\ITransactionService.cs",
+              "RelativeDocumentMoniker": "Services\\ITransactionService.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\ITransactionService.cs",
+              "RelativeToolTip": "Services\\ITransactionService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:01:43.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ManagerTransactionsController.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\ManagerTransactionsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ManagerTransactionsController.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\ManagerTransactionsController.cs*",
-              "RelativeToolTip": "Controllers\\ManagerTransactionsController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\ManagerTransactionsController.cs",
+              "RelativeToolTip": "Controllers\\ManagerTransactionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T05:17:28.405Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:48:43.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "AccountsController.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\AccountsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountsController.cs",
@@ -277,19 +354,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ITransactionService.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\ITransactionService.cs",
-              "RelativeDocumentMoniker": "Services\\ITransactionService.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\ITransactionService.cs",
-              "RelativeToolTip": "Services\\ITransactionService.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T13:01:43.85Z"
+              "WhenOpened": "2026-02-14T06:48:43.34Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "TransactionService.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\TransactionService.cs",
               "RelativeDocumentMoniker": "Services\\TransactionService.cs",
@@ -301,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "ApprovalRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\ApprovalRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ApprovalRepository.cs",
@@ -313,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "TransactionsController.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\TransactionsController.cs",
               "RelativeDocumentMoniker": "Controllers\\TransactionsController.cs",
@@ -325,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "AccountRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\AccountRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\AccountRepository.cs",
@@ -337,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "TransactionRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\TransactionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\TransactionRepository.cs",
@@ -349,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "ITransactionRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\ITransactionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ITransactionRepository.cs",
@@ -361,19 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "NotificationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\NotificationRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\NotificationRepository.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\NotificationRepository.cs",
-              "RelativeToolTip": "Repositories\\NotificationRepository.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAIwGEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T12:59:50.038Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Mapping\\MappingProfile.cs",
               "RelativeDocumentMoniker": "Mapping\\MappingProfile.cs",
@@ -385,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -397,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "ApprovalService.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\ApprovalService.cs",
               "RelativeDocumentMoniker": "Services\\ApprovalService.cs",
@@ -409,19 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAAkwNsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T06:57:25.67Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -457,30 +511,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\NotificationService.cs",
-              "RelativeDocumentMoniker": "Services\\NotificationService.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\NotificationService.cs",
-              "RelativeToolTip": "Services\\NotificationService.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAIBJwHcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T13:05:33.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "NotificationsController.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\NotificationsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\NotificationsController.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\NotificationsController.cs",
-              "RelativeToolTip": "Controllers\\NotificationsController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAIBQwGsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T13:06:25.717Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 51,
               "Title": "CreateAccountDto.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\CreateAccountDto.cs",
@@ -493,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "Report.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\Report.cs",
               "RelativeDocumentMoniker": "Models\\Report.cs",
@@ -505,19 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "INotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\INotificationService.cs",
-              "RelativeDocumentMoniker": "Services\\INotificationService.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\INotificationService.cs",
-              "RelativeToolTip": "Services\\INotificationService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAEBUwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T13:02:03.189Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "IApprovalService.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\IApprovalService.cs",
               "RelativeDocumentMoniker": "Services\\IApprovalService.cs",
@@ -529,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "ApprovalsController.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\ApprovalsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ApprovalsController.cs",
@@ -541,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "INotificationRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\INotificationRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\INotificationRepository.cs",
@@ -553,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "IApprovalRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\IApprovalRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IApprovalRepository.cs",
@@ -565,7 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "IAccountRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\IAccountRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IAccountRepository.cs",
@@ -577,19 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "NotificationDto.cs",
-              "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\NotificationDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\NotificationDto.cs",
-              "ToolTip": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\NotificationDto.cs",
-              "RelativeToolTip": "DTOs\\NotificationDto.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAEBUwAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T12:57:37.339Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "CreateTransactionDto.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\CreateTransactionDto.cs",
               "RelativeDocumentMoniker": "DTOs\\CreateTransactionDto.cs",
@@ -601,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "ApprovalDetailsDto.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\ApprovalDetailsDto.cs",
               "RelativeDocumentMoniker": "DTOs\\ApprovalDetailsDto.cs",
@@ -613,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "IdGenerator.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Helpers\\IdGenerator.cs",
               "RelativeDocumentMoniker": "Helpers\\IdGenerator.cs",
@@ -625,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "TransactionDto.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\TransactionDto.cs",
               "RelativeDocumentMoniker": "DTOs\\TransactionDto.cs",
@@ -637,7 +643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Models\\Notification.cs",
@@ -649,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "Approval.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\Approval.cs",
               "RelativeDocumentMoniker": "Models\\Approval.cs",
@@ -661,7 +667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "Transaction.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\Transaction.cs",
               "RelativeDocumentMoniker": "Models\\Transaction.cs",
@@ -673,7 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "Accounts.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\Accounts.cs",
               "RelativeDocumentMoniker": "Models\\Accounts.cs",
@@ -685,7 +691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IUserRepository.cs",
@@ -697,7 +703,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "AccountDto.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\AccountDto.cs",
               "RelativeDocumentMoniker": "DTOs\\AccountDto.cs",
@@ -709,7 +715,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "20260226111207_new-migration-1.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Migrations\\20260226111207_new-migration-1.cs",
               "RelativeDocumentMoniker": "Migrations\\20260226111207_new-migration-1.cs",
@@ -721,7 +727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
@@ -733,7 +739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "20260226110959_new-migration.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Migrations\\20260226110959_new-migration.cs",
               "RelativeDocumentMoniker": "Migrations\\20260226110959_new-migration.cs",
@@ -745,7 +751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -757,7 +763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "PaginationHelper.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Helpers\\PaginationHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\PaginationHelper.cs",
@@ -769,7 +775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "SecurityRequirementsOperationFilter.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Filters\\SecurityRequirementsOperationFilter.cs",
               "RelativeDocumentMoniker": "Filters\\SecurityRequirementsOperationFilter.cs",
@@ -781,7 +787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "UserRole.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\UserRole.cs",
               "RelativeDocumentMoniker": "Models\\UserRole.cs",
@@ -793,7 +799,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "JwtService.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\JwtService.cs",
               "RelativeDocumentMoniker": "Services\\JwtService.cs",
@@ -805,7 +811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "UserApi.csproj",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\UserApi.csproj",
               "RelativeDocumentMoniker": "UserApi.csproj",
@@ -817,7 +823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -829,7 +835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\RegisterRequest.cs",
@@ -841,7 +847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "ComplianceMetricsDto.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\ComplianceMetricsDto.cs",
               "RelativeDocumentMoniker": "DTOs\\ComplianceMetricsDto.cs",
@@ -853,7 +859,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "AuthDtos.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\DTOs\\AuthDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\AuthDtos.cs",
@@ -865,7 +871,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "UserStatus.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Models\\UserStatus.cs",
               "RelativeDocumentMoniker": "Models\\UserStatus.cs",
@@ -877,7 +883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "PasswordService.cs",
               "DocumentMoniker": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\Services\\PasswordService.cs",
               "RelativeDocumentMoniker": "Services\\PasswordService.cs",

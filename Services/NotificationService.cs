@@ -71,7 +71,7 @@ public class NotificationService : INotificationService
             Type = NotificationType.SuspiciousActivity,
             Message = $"High-value {transactionType} transaction of ₹{amount:N2} has been initiated and requires approval.",
             Status = NotificationStatus.Unread,
-            CreatedDate = DateTime.UtcNow,
+            CreatedDate = DateTime.Now,
             TransactionId = transactionId,
             ApprovalId = null
         };
@@ -95,7 +95,7 @@ public class NotificationService : INotificationService
             Type = NotificationType.ApprovalReminder,
             Message = message,
             Status = NotificationStatus.Unread,
-            CreatedDate = DateTime.UtcNow,
+            CreatedDate = DateTime.Now,
             ApprovalId = approvalId,
             TransactionId = null
         };
