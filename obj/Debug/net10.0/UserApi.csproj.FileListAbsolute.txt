@@ -818,3 +818,11 @@ C:\Users\2464491\OneDrive - Cognizant\Desktop\My-Bank Backend\obj\Debug\net10.0\
 C:\Users\2464491\OneDrive - Cognizant\Desktop\My-Bank Backend\obj\Debug\net10.0\UserApi.pdb
 C:\Users\2464491\OneDrive - Cognizant\Desktop\My-Bank Backend\obj\Debug\net10.0\UserApi.genruntimeconfig.cache
 C:\Users\2464491\OneDrive - Cognizant\Desktop\My-Bank Backend\obj\Debug\net10.0\ref\UserApi.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\ClosedXML.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\ClosedXML.Parser.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\DocumentFormat.OpenXml.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\ExcelNumberFormat.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\RBush.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\SixLabors.Fonts.dll
+C:\Users\2464488\source\repos\Group-Project-Backend-fin\bin\Debug\net10.0\System.IO.Packaging.dll

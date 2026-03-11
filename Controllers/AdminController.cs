@@ -7,6 +7,7 @@ using UserApprovalApi.Data;
 using UserApprovalApi.DTOs;
 using UserApprovalApi.Models;
 using UserApprovalApi.Repositories;
+using ClosedXML.Excel;
 
 namespace UserApprovalApi.Controllers
 {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HkO53+eZFNc=",
+  "dgSpecHash": "Yofq1I9iS4g=",
   "success": true,
   "projectFilePath": "C:\\Users\\2464488\\source\\repos\\Group-Project-Backend-fin\\UserApi.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,11 @@
     "C:\\Users\\2464488\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\closedxml\\0.105.0\\closedxml.0.105.0.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\closedxml.parser\\2.0.0\\closedxml.parser.2.0.0.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\documentformat.openxml\\3.1.1\\documentformat.openxml.3.1.1.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\documentformat.openxml.framework\\3.1.1\\documentformat.openxml.framework.3.1.1.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.2\\microsoft.aspnetcore.authentication.jwtbearer.10.0.2.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
@@ -42,6 +47,8 @@
     "C:\\Users\\2464488\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\rbush.signed\\4.0.0\\rbush.signed.4.0.0.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
@@ -56,6 +63,7 @@
     "C:\\Users\\2464488\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.11\\system.configuration.configurationmanager.9.0.11.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.0.1\\system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512",
+    "C:\\Users\\2464488\\.nuget\\packages\\system.io.packaging\\8.0.1\\system.io.packaging.8.0.1.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\system.memory.data\\8.0.1\\system.memory.data.8.0.1.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
     "C:\\Users\\2464488\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"

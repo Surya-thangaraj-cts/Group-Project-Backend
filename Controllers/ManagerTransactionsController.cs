@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using UserApi.DTOs;
 using UserApprovalApi.Data;
 using System.Text;
+using ClosedXML.Excel;
 
 namespace UserApprovalApi.Controllers;
 
@@ -296,19 +297,40 @@ public class ManagerTransactionsController : ControllerBase
 
             var transactions = await query.OrderByDescending(t => t.Date).ToListAsync(ct);
 
-            // Build CSV content (simple Excel-compatible format)
-            var csv = new StringBuilder();
-            csv.AppendLine("TransactionId,AccountId,Type,Amount,Date,Status,Flag");
-
-            foreach (var txn in transactions)
+            using (var workbook = new XLWorkbook())
             {
-                csv.AppendLine($"{txn.TransactionId},{txn.AccountId},{txn.Type},{txn.Amount},{txn.Date:yyyy-MM-dd},{txn.Status},{txn.Flag}");
-            }
+                var worksheet = workbook.Worksheets.Add("Transactions");
+                // Header
+                worksheet.Cell(1, 1).Value = "TransactionId";
+                worksheet.Cell(1, 2).Value = "AccountId";
+                worksheet.Cell(1, 3).Value = "Type";
+                worksheet.Cell(1, 4).Value = "Amount";
+                worksheet.Cell(1, 5).Value = "Date";
+                worksheet.Cell(1, 6).Value = "Status";
+                worksheet.Cell(1, 7).Value = "Flag";
 
-            var bytes = Encoding.UTF8.GetBytes(csv.ToString());
-            
-            // Return as Excel file (CSV format that Excel can open)
-            return File(bytes, "application/vnd.ms-excel", $"transactions_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx");
+                int row = 2;
+                foreach (var txn in transactions)
+                {
+                    worksheet.Cell(row, 1).Value = txn.TransactionId;
+                    worksheet.Cell(row, 2).Value = txn.AccountId;
+                    worksheet.Cell(row, 3).Value = txn.Type;
+                    worksheet.Cell(row, 4).Value = txn.Amount;
+                    worksheet.Cell(row, 5).Value = txn.Date;
+                    worksheet.Cell(row, 6).Value = txn.Status.ToString();
+                    worksheet.Cell(row, 7).Value = txn.Flag;
+                    row++;
+                }
+
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    stream.Position = 0;
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        $"transactions_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx");
+                }
+            }
         }
         catch (Exception ex)
         {
